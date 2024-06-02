@@ -37,4 +37,12 @@ class ClasseController extends Controller
         return redirect()->route('cours.index');
     }
 
+    public function delete(Request $request)
+    {
+        $coursId = $request->input('coursId');
+
+        Classe::destroy($coursId);
+
+        return redirect()->route('cours.index');
+    }
 }

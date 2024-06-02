@@ -15,13 +15,12 @@
                             <h4 class="card-title">Lise des cours</h4>
                             <p class="card-description">test <code> test</code>
                             </p>
-
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#add_cours">
-                                <i class="fa fa-plus"></i> Ajouter un cours
-                            </button>
-
+                            <div class="text-end mb-3">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#add_cours">
+                                    <i class="fa fa-plus"></i> Ajouter un cours
+                                </button>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
@@ -41,7 +40,7 @@
                                             <td> nbr adherent</td>
                                             <td> {{ $classe->tarif }}</td>
                                             <td class="text-right">
-                                                <a class="btn btn-outline-info btn-rounded"
+                                                <a class="btn btn-outline-info"
                                                    href="#"><i
                                                         class="fa fa-eye"></i>
                                                 </a>
@@ -51,8 +50,7 @@
                                                     <i class="fa fa-pencil"></i>
                                                 </button>
                                                 <button type="button" class="btn btn-outline-danger"
-                                                        data-bs-toggle="modal" data-id="{{ $classe->id }}"
-                                                        data-cours-id="{{ $classe->id }}"
+                                                        data-bs-toggle="modal" data-cours-id="{{ $classe->id }}"
                                                         data-bs-target="#delete_cours">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
@@ -145,5 +143,54 @@
                     </div>
                 </div>
             @endforeach
+
+            <!-- Delete Cours Modal -->
+            <div class="modal fade" id="delete_cours" tabindex="-1" aria-labelledby="deletecoursLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Suuprimer</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-header">
+                                <p>Êtes-vous sûr de vouloir supprimer le cours ?</p>
+                            </div>
+                            <div class="modal-btn delete-action">
+                                <form method="POST" action="{{ route('cours.delete') }}" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="hidden" name="coursId" id="coursId" value="">
+                                            <button type="submit" class="btn btn-primary continue-btn submit-btn">
+                                                Supprimer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('button[data-bs-target="#delete_cours"]').click(function () {
+                var coursId = $(this).data('cours-id');
+                $('#coursId').val(coursId);
+                $('#delete-course-id').text(coursId);
+            });
+        });
+    </script>
 
 @endsection

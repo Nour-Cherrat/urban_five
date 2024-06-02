@@ -36,3 +36,4 @@ Route::get('/dashboard', function () {
 Route::get('/cours', [ClasseController::class, 'index'])->name('cours.index');
 Route::post('/cours/create', [ClasseController::class, 'create'])->name('cours.create');
 Route::post('/cours/update', [ClasseController::class, 'update'])->name('cours.update');
+Route::delete('/cours/delete', [ClasseController::class, 'delete'])->name('cours.delete');
