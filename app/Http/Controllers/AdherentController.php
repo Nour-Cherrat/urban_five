@@ -35,4 +35,22 @@ class AdherentController extends Controller
         return redirect()->back();
     }
 
+    public function update(Request $request)
+    {
+        $adherent = Adherent::findOrFail($request->input('id'));
+
+        $adherent->nom = $request->input('nom');
+        $adherent->prenom = $request->input('prenom');
+        $adherent->email = $request->input('email');
+        $adherent->tel = $request->input('tel');
+        $adherent->date_inscription = $request->input('date_inscription');
+        $adherent->date_fin = $request->input('date_fin');
+        $adherent->gender = $request->input('gender');
+        $adherent->id_classe = $request->input('id_classe');
+
+        $adherent->save();
+
+        return redirect()->route('adherent.index');
+    }
+
 }
