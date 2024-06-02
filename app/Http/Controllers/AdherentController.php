@@ -53,4 +53,13 @@ class AdherentController extends Controller
         return redirect()->route('adherent.index');
     }
 
+    public function delete(Request $request)
+    {
+        $adherentId = $request->input('adherentId');
+
+        Adherent::destroy($adherentId);
+
+        return redirect()->route('adherent.index');
+    }
+
 }

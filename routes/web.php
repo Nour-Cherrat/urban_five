@@ -44,3 +44,4 @@ Route::delete('/cours/delete', [ClasseController::class, 'delete'])->name('cours
 Route::get('/adherent', [AdherentController::class, 'index'])->name('adherent.index')->middleware('auth');
 Route::post('/adherent/create', [AdherentController::class, 'create'])->name('adherent.create')->middleware('auth');
 Route::post('/adherent/update', [AdherentController::class, 'update'])->name('adherent.update')->middleware('auth');
+Route::delete('/adherent/delete', [AdherentController::class, 'delete'])->name('adherent.delete')->middleware('auth');
