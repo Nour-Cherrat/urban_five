@@ -23,9 +23,10 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}"/>
 </head>
 
+@auth
     @include('layoutsAdmin.header')
     @include('layoutsAdmin.sidebar')
-
+@endauth
 
 @yield('content')
 
