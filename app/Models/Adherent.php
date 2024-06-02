@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Classe extends Model
+class Adherent extends Model
 {
     use HasFactory;
 
-    public function adherents()
+    public function classe()
     {
-        return $this->hasMany(Adherent::class, 'id_classe');
+        return $this->belongsTo(Classe::class, 'id_classe');
     }
 }

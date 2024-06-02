@@ -11,16 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('adherents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_classe')->constrained('classes')->index('id_classe_adherents')->onDelete('cascade');
             $table->string('nom');
             $table->string('prenom');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('tel')->nullable();
-            $table->enum('type', ['Admin', 'Coach'])->default('Coach');
-            $table->rememberToken();
+            $table->enum('gender', ['F', 'M'])->default('M');
+            $table->date('date_inscription');
+            $table->date('date_fin')->nullable();
+            $table->enum('statut', ['Actif', 'Non-actif'])->default('Actif');
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('adherents');
     }
 };
