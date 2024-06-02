@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClasseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,8 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->name('dashboard')->middleware('auth');
 
+
+/************************ Classe ************************/
+Route::get('/cours', [ClasseController::class, 'index'])->name('cours.index');
+Route::post('/cours/create', [ClasseController::class, 'create'])->name('cours.create');
+Route::post('/cours/update', [ClasseController::class, 'update'])->name('cours.update');
