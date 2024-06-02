@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdherentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +34,12 @@ Route::get('/dashboard', function () {
 
 
 /************************ Classe ************************/
-Route::get('/cours', [ClasseController::class, 'index'])->name('cours.index');
-Route::post('/cours/create', [ClasseController::class, 'create'])->name('cours.create');
-Route::post('/cours/update', [ClasseController::class, 'update'])->name('cours.update');
-Route::delete('/cours/delete', [ClasseController::class, 'delete'])->name('cours.delete');
+Route::get('/cours', [ClasseController::class, 'index'])->name('cours.index')->middleware('auth');
+Route::post('/cours/create', [ClasseController::class, 'create'])->name('cours.create')->middleware('auth');
+Route::post('/cours/update', [ClasseController::class, 'update'])->name('cours.update')->middleware('auth');
+Route::delete('/cours/delete', [ClasseController::class, 'delete'])->name('cours.delete')->middleware('auth');
+
+
+/************************ Adherent ************************/
+Route::get('/adherent', [AdherentController::class, 'index'])->name('adherent.index')->middleware('auth');
+Route::post('/adherent/create', [AdherentController::class, 'create'])->name('adherent.create')->middleware('auth');
