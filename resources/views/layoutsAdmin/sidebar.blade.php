@@ -20,14 +20,13 @@
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('cours.index') }}">Liste</a></li>
-
                     </ul>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#adherents" aria-expanded="false"
                    aria-controls="ui-basic">
-                    <i class="menu-icon fa fa-users"></i>
+                    <i class="menu-icon fa fa-vcard-o"></i>
                     <span class="menu-title">Adherent</span>
                     <i class="menu-arrow"></i>
                 </a>
@@ -35,7 +34,20 @@
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('adherent.index') }}">Liste</a></li>
-
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#coaches" aria-expanded="false"
+                   aria-controls="ui-basic">
+                    <i class="menu-icon fa fa-users"></i>
+                    <span class="menu-title">Coaches</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="coaches">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('coach.index') }}">Liste</a></li>
                     </ul>
                 </div>
             </li>

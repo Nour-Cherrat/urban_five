@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdherentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
+use App\Http\Controllers\CoachController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,3 +46,7 @@ Route::get('/adherent', [AdherentController::class, 'index'])->name('adherent.in
 Route::post('/adherent/create', [AdherentController::class, 'create'])->name('adherent.create')->middleware('auth');
 Route::post('/adherent/update', [AdherentController::class, 'update'])->name('adherent.update')->middleware('auth');
 Route::delete('/adherent/delete', [AdherentController::class, 'delete'])->name('adherent.delete')->middleware('auth');
+
+
+/************************ Coach ************************/
+Route::get('/coach', [CoachController::class, 'index'])->name('coach.index')->middleware('auth');
