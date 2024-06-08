@@ -22,5 +22,32 @@ class UserSeeder extends Seeder
             'tel' => '0643219875',
             'type' => 'Admin',
         ]);
+
+        DB::table('users')->insert([
+            'nom' => 'coach1',
+            'prenom' => 'coach1',
+            'email' => 'coach@gmail.com',
+            'password' => Hash::make('password'),
+            'tel' => '0643219875',
+            'type' => 'Coach',
+        ]);
+
+        DB::table('users')->insert([
+            'nom' => 'coach2',
+            'prenom' => 'coach2',
+            'email' => 'coache@gmail.com',
+            'password' => Hash::make('password'),
+            'tel' => '0643219875',
+            'type' => 'Coach',
+        ]);
+
+        DB::table('users')->insert([
+            'nom' => 'coach3',
+            'prenom' => 'coach3',
+            'email' => 'coachee@gmail.com',
+            'password' => Hash::make('password'),
+            'tel' => '0643219875',
+            'type' => 'Coach',
+        ]);
     }
 }
