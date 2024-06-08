@@ -19,4 +19,29 @@ class CoachController extends Controller
             'classes' => $classes
         ]);
     }
+
+    public function create(Request $request)
+    {
+        $user = new User();
+
+        $user->nom = $request->nom;
+        $user->prenom = $request->prenom;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->tel = $request->tel;
+        $user->type = 'Coach';
+
+        $user->save();
+
+        $coach = new Coach();
+
+        $coach->id_user = $user->id;
+        $coach->id_classe = $request->id_classe;
+        $coach->salaire = $request->salaire;
+
+
+        $coach->save();
+        return redirect()->back();
+    }
+
 }
