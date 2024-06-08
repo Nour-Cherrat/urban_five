@@ -55,7 +55,8 @@
                                                     <i class="fa fa-pencil"></i>
                                                 </button>
                                                 <button type="button" class="btn btn-outline-danger"
-                                                        data-bs-toggle="modal" data-abonnement-id="{{ $abonnement->id }}"
+                                                        data-bs-toggle="modal"
+                                                        data-abonnement-id="{{ $abonnement->id }}"
                                                         data-bs-target="#delete_abonnement">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
@@ -72,7 +73,8 @@
 
 
             <!-- Add Abonnement Modal -->
-            <div class="modal fade" id="add_abonnement" tabindex="-1" aria-labelledby="addabonnementLabel" aria-hidden="true">
+            <div class="modal fade" id="add_abonnement" tabindex="-1" aria-labelledby="addabonnementLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -127,8 +129,68 @@
             </div>
 
 
+            <!-- Update Abonnement Modal -->
+            @foreach($abonnements as $abonnement)
+                <div class="modal fade" id="edit_abonnement{{ $abonnement->id }}" tabindex="-1"
+                     aria-labelledby="editabonnementLabel{{ $abonnement->id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addabonnementLabel{{ $abonnement->id }}">Modifier une abonnement</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="{{ route('abonnement.update') }}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group form-focus select-focus">
+                                                <input type="hidden" name="id" value="{{ $abonnement->id }}">
+                                                <label class="col-form-label">Cours <span
+                                                        class="text-danger">*</span></label>
+                                                <select class="select floating" name="id_cours">
+                                                    <option>Choisir</option>
+                                                    @foreach($classes as $classe)
+                                                        <option value="{{ $classe->id }}"
+                                                                @if($classe->id === $abonnement->id_cours) selected @endif >
+                                                            {{ $classe->libelle }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group form-focus select-focus">
+                                                <label class="col-form-label">Duree <span
+                                                        class="text-danger">*</span></label>
+                                                <select class="select floating" name="duree" value="{{ $abonnement->duree }}">
+                                                    <option value="1 Mois" {{ $abonnement->duree === '1 Mois' ? 'selected' : '' }}>1 Mois</option>
+                                                    <option value="3 Mois" {{ $abonnement->duree === '3 Mois' ? 'selected' : '' }}>3 Mois</option>
+                                                    <option value="6 Mois" {{ $abonnement->duree === '6 Mois' ? 'selected' : '' }}>6 Mois</option>
+                                                    <option value="1 An" {{ $abonnement->duree === '1 An' ? 'selected' : '' }}>1 An</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Tarif <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="number" name="tarif" value="{{ $abonnement->tarif }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="submit-section">
+                                        <button class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+
         </div>
     </div>
-
 
 @endsection
