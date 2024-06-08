@@ -15,17 +15,17 @@ class ClasseSeeder extends Seeder
     {
         DB::table('classes')->insert([
             'libelle' => 'Cours 1',
-            'tarif' => '100',
+            'num_salle' => '1',
         ]);
 
         DB::table('classes')->insert([
             'libelle' => 'Cours 2',
-            'tarif' => '200',
+            'num_salle' => '2',
         ]);
 
         DB::table('classes')->insert([
             'libelle' => 'Cours 3',
-            'tarif' => '300',
+            'num_salle' => '3',
         ]);
     }
 }

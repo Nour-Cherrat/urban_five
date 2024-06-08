@@ -19,7 +19,7 @@ class ClasseController extends Controller
         $classe = new Classe();
 
         $classe->libelle = $request->libelle;
-        $classe->tarif = $request->tarif;
+        $classe->num_salle = $request->num_salle;
 
         $classe->save();
         return redirect()->back();
@@ -30,7 +30,7 @@ class ClasseController extends Controller
         $classe = Classe::findOrFail($request->input('id'));
 
         $classe->libelle = $request->input('libelle');
-        $classe->tarif = $request->input('tarif');
+        $classe->num_salle = $request->input('num_salle');
 
         $classe->save();
 

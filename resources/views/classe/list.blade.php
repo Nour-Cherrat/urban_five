@@ -28,7 +28,7 @@
                                         <th> #</th>
                                         <th> Libelle</th>
                                         <th> Nbr adehernt</th>
-                                        <th> Tarif</th>
+                                        <th> Num salle</th>
                                         <th> Action</th>
                                     </tr>
                                     </thead>
@@ -38,7 +38,7 @@
                                             <td>{{ $index + 1 }}</td>
                                             <td> {{ $classe->libelle }}</td>
                                             <td> nbr adherent</td>
-                                            <td> {{ $classe->tarif }}</td>
+                                            <td> {{ $classe->num_salle }}</td>
                                             <td class="text-right">
                                                 <a class="btn btn-outline-info"
                                                    href="#"><i
@@ -86,9 +86,9 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="col-form-label">Tarif <span
+                                            <label class="col-form-label">Num salle <span
                                                     class="text-danger">*</span></label>
-                                            <input class="form-control" type="number" name="tarif">
+                                            <input class="form-control" type="number" name="num_salle">
                                         </div>
                                     </div>
                                 </div>
@@ -127,10 +127,10 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="col-form-label">Tarif <span
+                                                <label class="col-form-label">Num salle <span
                                                         class="text-danger">*</span></label>
-                                                <input class="form-control" type="number" name="tarif"
-                                                       value="{{ $classe->tarif }}">
+                                                <input class="form-control" type="number" name="num_salle"
+                                                       value="{{ $classe->num_salle }}">
                                             </div>
                                         </div>
                                     </div>
