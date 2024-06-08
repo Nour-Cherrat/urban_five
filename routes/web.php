@@ -5,6 +5,7 @@ use App\Http\Controllers\AdherentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\CoachController;
+use App\Http\Controllers\InviteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,3 +63,6 @@ Route::post('/abonnement/create', [AbonnementController::class, 'create'])->name
 Route::post('/abonnement/update', [AbonnementController::class, 'update'])->name('abonnement.update')->middleware('auth');
 Route::delete('/abonnement/delete', [AbonnementController::class, 'delete'])->name('abonnement.delete')->middleware('auth');
 
+
+/************************ Invite ************************/
+Route::get('/invite', [InviteController::class, 'index'])->name('invite.index')->middleware('auth');

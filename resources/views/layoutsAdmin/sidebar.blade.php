@@ -10,6 +10,20 @@
             </li>
             <li class="nav-item nav-category">Salle de sport</li>
             <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#coaches" aria-expanded="false"
+                   aria-controls="ui-basic">
+                    <i class="menu-icon fa fa-users"></i>
+                    <span class="menu-title">Coaches</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="coaches">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('coach.index') }}">Liste</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#adherents" aria-expanded="false"
                    aria-controls="ui-basic">
                     <i class="menu-icon fa fa-vcard-o"></i>
@@ -24,16 +38,16 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#coaches" aria-expanded="false"
+                <a class="nav-link" data-bs-toggle="collapse" href="#invites" aria-expanded="false"
                    aria-controls="ui-basic">
-                    <i class="menu-icon fa fa-users"></i>
-                    <span class="menu-title">Coaches</span>
+                    <i class="menu-icon fa fa-user-circle-o"></i>
+                    <span class="menu-title">Invités</span>
                     <i class="menu-arrow"></i>
                 </a>
-                <div class="collapse" id="coaches">
+                <div class="collapse" id="invites">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('coach.index') }}">Liste</a></li>
+                            <a class="nav-link" href="{{ route('invite.index') }}">Liste</a></li>
                     </ul>
                 </div>
             </li>
