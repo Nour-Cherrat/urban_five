@@ -22,7 +22,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item fw-semibold d-none d-lg-block ms-0">
                     <h1 class="welcome-text">Bonjour, <span class="text-black fw-bold">{{ Auth::user()->nom }} {{ Auth::user()->prenom }}</span></h1>
-                    <h3 class="welcome-sub-text">Your performance summary this week </h3>
+                    <h3 class="welcome-sub-text">Bienvenue sur votre tableau de bord.</h3>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">

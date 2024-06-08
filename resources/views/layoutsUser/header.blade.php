@@ -14,7 +14,7 @@
                         <li class="scroll-to-section"><a href="#our-classes">Cours</a></li>
                         <li class="scroll-to-section"><a href="#schedule">Programmes</a></li>
                         <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
-                        <li class="main-button"><a href="login.html">Se connecter</a></li>
+                        <li class="main-button"><a href="{{ route('login') }}">Se connecter</a></li>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
