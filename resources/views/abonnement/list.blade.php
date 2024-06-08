@@ -136,7 +136,8 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="addabonnementLabel{{ $abonnement->id }}">Modifier une abonnement</h5>
+                                <h5 class="modal-title" id="addabonnementLabel{{ $abonnement->id }}">Modifier une
+                                    abonnement</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
@@ -163,11 +164,24 @@
                                             <div class="form-group form-focus select-focus">
                                                 <label class="col-form-label">Duree <span
                                                         class="text-danger">*</span></label>
-                                                <select class="select floating" name="duree" value="{{ $abonnement->duree }}">
-                                                    <option value="1 Mois" {{ $abonnement->duree === '1 Mois' ? 'selected' : '' }}>1 Mois</option>
-                                                    <option value="3 Mois" {{ $abonnement->duree === '3 Mois' ? 'selected' : '' }}>3 Mois</option>
-                                                    <option value="6 Mois" {{ $abonnement->duree === '6 Mois' ? 'selected' : '' }}>6 Mois</option>
-                                                    <option value="1 An" {{ $abonnement->duree === '1 An' ? 'selected' : '' }}>1 An</option>
+                                                <select class="select floating" name="duree"
+                                                        value="{{ $abonnement->duree }}">
+                                                    <option
+                                                        value="1 Mois" {{ $abonnement->duree === '1 Mois' ? 'selected' : '' }}>
+                                                        1 Mois
+                                                    </option>
+                                                    <option
+                                                        value="3 Mois" {{ $abonnement->duree === '3 Mois' ? 'selected' : '' }}>
+                                                        3 Mois
+                                                    </option>
+                                                    <option
+                                                        value="6 Mois" {{ $abonnement->duree === '6 Mois' ? 'selected' : '' }}>
+                                                        6 Mois
+                                                    </option>
+                                                    <option
+                                                        value="1 An" {{ $abonnement->duree === '1 An' ? 'selected' : '' }}>
+                                                        1 An
+                                                    </option>
                                                 </select>
                                             </div>
                                         </div>
@@ -175,7 +189,8 @@
                                             <div class="form-group">
                                                 <label class="col-form-label">Tarif <span
                                                         class="text-danger">*</span></label>
-                                                <input class="form-control" type="number" name="tarif" value="{{ $abonnement->tarif }}">
+                                                <input class="form-control" type="number" name="tarif"
+                                                       value="{{ $abonnement->tarif }}">
                                             </div>
                                         </div>
                                     </div>
@@ -190,7 +205,53 @@
             @endforeach
 
 
+            <!-- Delete Abonnement Modal -->
+            <div class="modal fade" id="delete_abonnement" tabindex="-1" aria-labelledby="deleteabonnementLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Suuprimer</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-header">
+                                <p>Êtes-vous sûr de vouloir supprimer l'abonnement ?</p>
+                            </div>
+                            <div class="modal-btn delete-action">
+                                <form method="POST" action="{{ route('abonnement.delete') }}" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="hidden" name="abonnementId" id="abonnementId" value="">
+                                            <button type="submit" class="btn btn-primary continue-btn submit-btn">
+                                                Supprimer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('button[data-bs-target="#delete_abonnement"]').click(function () {
+                var abonnementId = $(this).data('abonnement-id');
+                $('#abonnementId').val(abonnementId);
+                $('#delete-abonnement-id').text(abonnementId);
+            });
+        });
+    </script>
 
 @endsection

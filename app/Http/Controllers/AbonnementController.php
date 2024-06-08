@@ -51,4 +51,13 @@ class AbonnementController extends Controller
 
         return redirect()->route('abonnement.index');
     }
+
+    public function delete(Request $request)
+    {
+        $abonnementId = $request->input('abonnementId');
+
+        Abonnement::destroy($abonnementId);
+
+        return redirect()->route('abonnement.index');
+    }
 }

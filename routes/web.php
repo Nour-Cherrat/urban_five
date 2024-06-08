@@ -60,3 +60,5 @@ Route::delete('/coach/delete', [CoachController::class, 'delete'])->name('coach.
 Route::get('/abonnement', [AbonnementController::class, 'index'])->name('abonnement.index')->middleware('auth');
 Route::post('/abonnement/create', [AbonnementController::class, 'create'])->name('abonnement.create')->middleware('auth');
 Route::post('/abonnement/update', [AbonnementController::class, 'update'])->name('abonnement.update')->middleware('auth');
+Route::delete('/abonnement/delete', [AbonnementController::class, 'delete'])->name('abonnement.delete')->middleware('auth');
+
