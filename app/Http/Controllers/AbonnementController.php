@@ -21,6 +21,14 @@ class AbonnementController extends Controller
 
     public function create(Request $request)
     {
+        $existingAbonnement = Abonnement::where('id_cours', $request->id_cours)
+            ->where('duree', $request->duree)
+            ->exists();
+        
+        if ($existingAbonnement) {
+            return redirect()->back()->with('error', 'Cet abonnement existe déjà.');
+        }
+
         $abonnement = new Abonnement();
 
         $abonnement->id_cours = $request->id_cours;

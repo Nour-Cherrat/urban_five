@@ -8,6 +8,11 @@
 
     <div class="main-panel">
         <div class="content-wrapper">
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
@@ -115,12 +120,6 @@
                                 <div class="submit-section">
                                     <button class="btn btn-primary submit-btn">Submit</button>
                                 </div>
-                                @if(isset($errorMessage))
-                                    <div class="alert alert-danger">
-                                        {{ $errorMessage }}
-                                    </div>
-                                @endif
-
                             </form>
                         </div>
                     </div>
