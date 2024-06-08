@@ -222,5 +222,53 @@
                 </div>
             @endforeach
 
+            <!-- Delete Coach Modal -->
+            <div class="modal fade" id="delete_coach" tabindex="-1" aria-labelledby="deletecoachLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Suuprimer</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-header">
+                                <p>Êtes-vous sûr de vouloir supprimer le coach ?</p>
+                            </div>
+                            <div class="modal-btn delete-action">
+                                <form method="POST" action="{{ route('coach.delete') }}" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="hidden" name="coachId" id="coachId" value="">
+                                            <button type="submit" class="btn btn-primary continue-btn submit-btn">
+                                                Supprimer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('button[data-bs-target="#delete_coach"]').click(function () {
+                var coachId = $(this).data('coach-id');
+                $('#coachId').val(coachId);
+                $('#delete-coach-id').text(coachId);
+            });
+        });
+    </script>
 
 @endsection

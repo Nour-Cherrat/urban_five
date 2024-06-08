@@ -52,4 +52,5 @@ Route::delete('/adherent/delete', [AdherentController::class, 'delete'])->name('
 Route::get('/coach', [CoachController::class, 'index'])->name('coach.index')->middleware('auth');
 Route::post('/coach/create', [CoachController::class, 'create'])->name('coach.create')->middleware('auth');
 Route::post('/coach/update', [CoachController::class, 'update'])->name('coach.update')->middleware('auth');
+Route::delete('/coach/delete', [CoachController::class, 'delete'])->name('coach.delete')->middleware('auth');
 

@@ -66,4 +66,12 @@ class CoachController extends Controller
         return redirect()->route('coach.index');
     }
 
+    public function delete(Request $request)
+    {
+        $coachId = $request->input('coachId');
+
+        Coach::destroy($coachId);
+
+        return redirect()->route('coach.index');
+    }
 }
