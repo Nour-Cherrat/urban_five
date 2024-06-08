@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbonnementController;
 use App\Http\Controllers\AdherentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
@@ -53,4 +54,8 @@ Route::get('/coach', [CoachController::class, 'index'])->name('coach.index')->mi
 Route::post('/coach/create', [CoachController::class, 'create'])->name('coach.create')->middleware('auth');
 Route::post('/coach/update', [CoachController::class, 'update'])->name('coach.update')->middleware('auth');
 Route::delete('/coach/delete', [CoachController::class, 'delete'])->name('coach.delete')->middleware('auth');
+
+
+/************************ Abonnement ************************/
+Route::get('/abonnement', [AbonnementController::class, 'index'])->name('abonnement.index')->middleware('auth');
 
