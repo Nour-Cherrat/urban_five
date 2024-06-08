@@ -21,7 +21,8 @@
         <div class="navbar-menu-wrapper d-flex align-items-top">
             <ul class="navbar-nav">
                 <li class="nav-item fw-semibold d-none d-lg-block ms-0">
-                    <h1 class="welcome-text">Bonjour, <span class="text-black fw-bold">{{ Auth::user()->nom }} {{ Auth::user()->prenom }}</span></h1>
+                    <h1 class="welcome-text">Bonjour, <span
+                            class="text-black fw-bold">{{ Auth::user()->nom }} {{ Auth::user()->prenom }}</span></h1>
                     <h3 class="welcome-sub-text">Bienvenue sur votre tableau de bord.</h3>
                 </li>
             </ul>
@@ -182,7 +183,7 @@
                         <a class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i>
                             FAQ</a>
-                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
+                        <a class="dropdown-item" href="{{ route('logout') }}"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
                             Out</a>
                     </div>
                 </li>
