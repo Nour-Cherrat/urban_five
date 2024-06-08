@@ -53,5 +53,13 @@ class InviteController extends Controller
         return redirect()->route('invite.index');
     }
 
+    public function delete(Request $request)
+    {
+        $inviteId = $request->input('inviteId');
+
+        Invite::destroy($inviteId);
+
+        return redirect()->route('invite.index');
+    }
 
 }
