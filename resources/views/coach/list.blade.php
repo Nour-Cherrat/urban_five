@@ -142,6 +142,85 @@
                 </div>
             </div>
 
-            
+
+            <!-- Update Coach Modal -->
+            @foreach($coaches as $coach)
+                <div class="modal fade" id="edit_coach{{ $coach->id }}" tabindex="-1"
+                     aria-labelledby="editedherentLabel{{ $coach->id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editedherentLabel{{ $coach->id }}">Modifier un coach</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="{{ route('coach.update') }}">
+                                    @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                                <input type="hidden" name="id" value="{{ $coach->id }}">
+                                            <label class="col-form-label">Nom <span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" name="nom" value="{{ $coach->user->nom }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Prenom <span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" name="prenom" value="{{ $coach->user->prenom }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Email </label>
+                                            <input class="form-control floating" type="email" name="email" value="{{ $coach->user->email }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Mot de passe </label>
+                                            <input class="form-control floating" type="password" name="password" value="{{ $coach->user->password }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Tel </label>
+                                            <input class="form-control floating" type="number" name="tel" value="{{ $coach->user->tel }}">
+                                        </div>
+                                    </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-focus select-focus">
+                                                <label class="col-form-label">Cours <span
+                                                        class="text-danger">*</span></label>
+                                                <select class="select floating" name="id_classe">
+                                                    <option>Choisir</option>
+                                                    @foreach($classes as $classe)
+                                                        <option value="{{ $classe->id }}"
+                                                                @if($classe->id === $coach->id_classe) selected @endif >
+                                                            {{ $classe->libelle }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Salaire </label>
+                                            <input class="form-control floating" type="number" name="salaire" value="{{ $coach->salaire }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="submit-section">
+                                        <button class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
 
 @endsection

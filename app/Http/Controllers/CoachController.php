@@ -44,4 +44,26 @@ class CoachController extends Controller
         return redirect()->back();
     }
 
+    public function update(Request $request)
+    {
+        $coach = Coach::findOrFail($request->input('id'));
+        $user = User::findOrFail($coach->id_user);
+
+        $user->nom = $request->input('nom');
+        $user->prenom = $request->input('prenom');
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+        $user->tel = $request->input('tel');
+        $user->type = 'Coach';
+
+        $user->save();
+
+        $coach->id_classe = $request->input('id_classe');
+        $coach->salaire = $request->input('salaire');
+
+        $coach->save();
+
+        return redirect()->route('coach.index');
+    }
+
 }
