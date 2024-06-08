@@ -19,4 +19,15 @@ class AbonnementController extends Controller
         ]);
     }
 
+    public function create(Request $request)
+    {
+        $abonnement = new Abonnement();
+
+        $abonnement->id_cours = $request->id_cours;
+        $abonnement->duree = $request->duree;
+        $abonnement->tarif = $request->tarif;
+
+        $abonnement->save();
+        return redirect()->back();
+    }
 }

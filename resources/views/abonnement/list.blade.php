@@ -66,6 +66,67 @@
             </div>
 
 
+            <!-- Add Abonnement Modal -->
+            <div class="modal fade" id="add_abonnement" tabindex="-1" aria-labelledby="addabonnementLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addabonnementLabel">Ajouter une abonnement</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="{{ route('abonnement.create') }}">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group form-focus select-focus">
+                                            <label class="col-form-label">Cours <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="select floating" name="id_cours">
+                                                <option>Choisir</option>
+                                                @foreach($classes as $classe)
+                                                    <option
+                                                        value="{{ $classe->id }}">{{ $classe->libelle }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group form-focus select-focus">
+                                            <label class="col-form-label">Duree <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="select floating" name="duree">
+                                                <option>Choisir</option>
+                                                <option>1 Mois</option>
+                                                <option>3 Mois</option>
+                                                <option>6 Mois</option>
+                                                <option>1 An</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Tarif <span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" type="number" name="tarif">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="submit-section">
+                                    <button class="btn btn-primary submit-btn">Submit</button>
+                                </div>
+                                @if(isset($errorMessage))
+                                    <div class="alert alert-danger">
+                                        {{ $errorMessage }}
+                                    </div>
+                                @endif
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>

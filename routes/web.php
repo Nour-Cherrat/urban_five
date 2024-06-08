@@ -58,4 +58,5 @@ Route::delete('/coach/delete', [CoachController::class, 'delete'])->name('coach.
 
 /************************ Abonnement ************************/
 Route::get('/abonnement', [AbonnementController::class, 'index'])->name('abonnement.index')->middleware('auth');
+Route::post('/abonnement/create', [AbonnementController::class, 'create'])->name('abonnement.create')->middleware('auth');
 
