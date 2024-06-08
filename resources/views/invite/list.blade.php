@@ -143,6 +143,95 @@
                 </div>
             </div>
 
+            <!-- Update Invite Modal -->
+            @foreach($invites as $invite)
+                <div class="modal fade" id="edit_invite{{ $invite->id }}" tabindex="-1"
+                     aria-labelledby="editeinviteLabel{{ $invite->id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editeinviteLabel{{ $invite->id }}">Modifier un invite</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="{{ route('invite.update') }}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="hidden" name="id" value="{{ $invite->id }}">
+                                                <label class="col-form-label">Nom <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="nom" value="{{ $invite->nom }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Prenom <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="prenom" value="{{ $invite->prenom }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Email </label>
+                                                <input class="form-control floating" type="email" name="email" value="{{ $invite->email }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Tel </label>
+                                                <input class="form-control floating" type="number" name="tel" value="{{ $invite->tel }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Date inscription</label>
+                                                <input class="form-control" type="date" name="date" value="{{ $invite->date }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-focus select-focus">
+                                                <label class="col-form-label">Sexe <span
+                                                        class="text-danger">*</span></label>
+                                                <select class="select floating" name="gender" value="{{ $invite->gender }}">
+                                                    <option
+                                                        value="F" {{ $invite->gender === 'F' ? 'selected' : '' }}>
+                                                        F
+                                                    </option>
+                                                    <option
+                                                        value="M" {{ $invite->gender === 'M' ? 'selected' : '' }}>
+                                                        M
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-focus select-focus">
+                                                <label class="col-form-label">Cours <span
+                                                        class="text-danger">*</span></label>
+                                                <select class="select floating" name="id_classe">
+                                                    <option>Choisir</option>
+                                                    @foreach($classes as $classe)
+                                                        <option value="{{ $classe->id }}"
+                                                                @if($classe->id === $invite->id_classe) selected @endif >
+                                                            {{ $classe->libelle }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="submit-section">
+                                        <button class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
         </div>
     </div>
 
