@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             AdherentSeeder::class,
             CoachSeeder::class,
             AbonnementSeeder::class,
+            InviteSeeder::class,
         ]);
     }
 }
