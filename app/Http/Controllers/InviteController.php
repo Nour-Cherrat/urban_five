@@ -36,30 +36,5 @@ class InviteController extends Controller
         return redirect()->back();
     }
 
-    public function update(Request $request)
-    {
-        $invite = Invite::findOrFail($request->input('id'));
-
-        $invite->nom = $request->input('nom');
-        $invite->prenom = $request->input('prenom');
-        $invite->email = $request->input('email');
-        $invite->tel = $request->input('tel');
-        $invite->date = $request->input('date');
-        $invite->gender = $request->input('gender');
-        $invite->id_classe = $request->input('id_classe');
-
-        $invite->save();
-
-        return redirect()->route('invite.index');
-    }
-
-    public function delete(Request $request)
-    {
-        $inviteId = $request->input('inviteId');
-
-        Invite::destroy($inviteId);
-
-        return redirect()->route('invite.index');
-    }
 
 }

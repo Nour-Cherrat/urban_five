@@ -66,3 +66,4 @@ Route::delete('/abonnement/delete', [AbonnementController::class, 'delete'])->na
 
 /************************ Invite ************************/
 Route::get('/invite', [InviteController::class, 'index'])->name('invite.index')->middleware('auth');
+Route::post('/invite/create', [InviteController::class, 'create'])->name('invite.create')->middleware('auth');
