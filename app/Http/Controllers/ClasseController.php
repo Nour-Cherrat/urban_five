@@ -21,6 +21,7 @@ class ClasseController extends Controller
 
         $classe->libelle = $request->libelle;
         $classe->num_salle = $request->num_salle;
+        $classe->desc = $request->desc;
 
         $classe->save();
 
@@ -48,13 +49,35 @@ class ClasseController extends Controller
     {
         $classe = Classe::findOrFail($request->input('id'));
 
+        // Update class details
         $classe->libelle = $request->input('libelle');
         $classe->num_salle = $request->input('num_salle');
-
+        $classe->desc = $request->input('desc');
         $classe->save();
 
-        return redirect()->route('cours.index');
+        // Update or add schedules
+        $jours = $request->input('jours');
+        $start_times = $request->input('start_times');
+        $end_times = $request->input('end_times');
+
+        // Delete existing schedules for the class
+        $classe->schedules()->delete();
+
+        // Add new schedules
+        if ($jours && $start_times && $end_times) {
+            for ($i = 0; $i < count($jours); $i++) {
+                $schedule = new ClassSchedule();
+                $schedule->jour = $jours[$i];
+                $schedule->start_time = $start_times[$i];
+                $schedule->end_time = $end_times[$i];
+                $schedule->id_classe = $classe->id;
+                $schedule->save();
+            }
+        }
+
+        return redirect()->route('cours.index')->with('success', 'Cours updated successfully');
     }
+
 
     public function delete(Request $request)
     {
