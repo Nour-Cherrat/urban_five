@@ -91,8 +91,48 @@
                                             <input class="form-control" type="number" name="num_salle">
                                         </div>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div id="schedule-container">
+                                            <div class="schedule-row">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Jour <span
+                                                                    class="text-danger">*</span></label>
+                                                            <select class="form-control" name="jours[]">
+                                                                <option value="Lundi">Lundi</option>
+                                                                <option value="Mardi">Mardi</option>
+                                                                <option value="Mercredi">Mercredi</option>
+                                                                <option value="Jeudi">Jeudi</option>
+                                                                <option value="Vendredi">Vendredi</option>
+                                                                <option value="Samedi">Samedi</option>
+                                                                <option value="Dimanche">Dimanche</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Debut <span
+                                                                    class="text-danger">*</span></label>
+                                                            <input class="form-control" type="time"
+                                                                   name="start_times[]">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Fin <span class="text-danger">*</span></label>
+                                                            <input class="form-control" type="time" name="end_times[]">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" id="add-schedule-row"><i
+                                                class="fa fa-plus"></i> Ajouter une séance
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="submit-section">
+                                <div class="submit-section" style="margin-top: 30px;">
                                     <button class="btn btn-primary submit-btn">Submit</button>
                                 </div>
                             </form>
@@ -100,6 +140,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- Update Cours Modal -->
             @foreach($classes as $classe)
@@ -189,6 +230,47 @@
                 var coursId = $(this).data('cours-id');
                 $('#coursId').val(coursId);
                 $('#delete-course-id').text(coursId);
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('add-schedule-row').addEventListener('click', function () {
+                var scheduleContainer = document.getElementById('schedule-container');
+                var scheduleRow = document.createElement('div');
+                scheduleRow.classList.add('schedule-row');
+                scheduleRow.innerHTML = `
+                <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-form-label">Jour <span class="text-danger">*</span></label>
+                        <select class="form-control" name="jours[]">
+                            <option value="Lundi">Lundi</option>
+                            <option value="Mardi">Mardi</option>
+                            <option value="Mercredi">Mercredi</option>
+                            <option value="Jeudi">Jeudi</option>
+                            <option value="Vendredi">Vendredi</option>
+                            <option value="Samedi">Samedi</option>
+                            <option value="Dimanche">Dimanche</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-form-label">Debut <span class="text-danger">*</span></label>
+                        <input class="form-control" type="time" name="start_times[]">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-form-label">Fin <span class="text-danger">*</span></label>
+                        <input class="form-control" type="time" name="end_times[]">
+                    </div>
+                </div>
+                </div>
+            `;
+                scheduleContainer.appendChild(scheduleRow);
             });
         });
     </script>
