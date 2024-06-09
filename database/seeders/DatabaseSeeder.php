@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             CoachSeeder::class,
             AbonnementSeeder::class,
             InviteSeeder::class,
+            ClassScheduleSeeder::class,
         ]);
     }
 }
