@@ -291,10 +291,12 @@
                                             @endif
                                         @endforeach
 
-                                        <td class="ts-item {{ strtolower($day) }} {{ strtolower($day) === 'lundi' ? 'show' : '' }}" data-tsmeta="{{ strtolower($day) }}">
+                                        <td class="ts-item {{ strtolower($day) }} {{ strtolower($day) === 'lundi' ? 'show' : '' }}"
+                                            data-tsmeta="{{ strtolower($day) }}">
                                             {{ $morningSchedule ?? '//' }}
                                         </td>
-                                        <td class="ts-item {{ strtolower($day) }} {{ strtolower($day) === 'lundi' ? 'show' : '' }}" data-tsmeta="{{ strtolower($day) }}">
+                                        <td class="ts-item {{ strtolower($day) }} {{ strtolower($day) === 'lundi' ? 'show' : '' }}"
+                                            data-tsmeta="{{ strtolower($day) }}">
                                             {{ $afternoonSchedule ?? '//' }}
                                         </td>
                                     @endforeach
@@ -400,8 +402,9 @@
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div id="map">
                         <iframe
-                            src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                            width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13589.034415684082!2d-8.04783!3d31.6267691!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafe94a941672ed%3A0xde67cdd2a606be45!2sComplexe%20Urbain%205!5e0!3m2!1sfr!2sma!4v1717935718633!5m2!1sfr!2sma"
+                            width="100%" height="600px" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12">
@@ -447,12 +450,12 @@
     <!-- ***** Contact Us Area Ends ***** -->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const filters = document.querySelectorAll(".schedule-filter li");
             const items = document.querySelectorAll(".ts-item");
 
             filters.forEach(filter => {
-                filter.addEventListener("click", function() {
+                filter.addEventListener("click", function () {
                     filters.forEach(f => f.classList.remove("active"));
                     this.classList.add("active");
 
