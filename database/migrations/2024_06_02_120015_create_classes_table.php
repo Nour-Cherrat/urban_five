@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('libelle');
             $table->integer('num_salle');
+            $table->string('desc');
             $table->timestamps();
         });
     }
