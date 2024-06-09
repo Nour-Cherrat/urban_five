@@ -30,4 +30,12 @@ class ContactController extends Controller
         return redirect()->back();
     }
 
+    public function delete(Request $request)
+    {
+        $contactId = $request->input('contactId');
+
+        Contact::destroy($contactId);
+
+        return redirect()->route('contact.index');
+    }
 }
