@@ -18,4 +18,9 @@ class Classe extends Model
     {
         return $this->hasOne(Coach::class, 'id_classe');
     }
+
+    public function schedules()
+    {
+        return $this->hasMany(ClassSchedule::class, 'id_classe');
+    }
 }

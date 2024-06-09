@@ -248,11 +248,13 @@
                 <div class="col-lg-12">
                     <div class="filters">
                         <ul class="schedule-filter">
-                            <li class="active" data-tsfilter="monday">Lundi</li>
-                            <li data-tsfilter="tuesday">Mardi</li>
-                            <li data-tsfilter="wednesday">Mercredi</li>
-                            <li data-tsfilter="thursday">Jeudi</li>
-                            <li data-tsfilter="friday">Vendredi</li>
+                            <li class="active" data-tsfilter="lundi">Lundi</li>
+                            <li data-tsfilter="mardi">Mardi</li>
+                            <li data-tsfilter="mercredi">Mercredi</li>
+                            <li data-tsfilter="jeudi">Jeudi</li>
+                            <li data-tsfilter="vendredi">Vendredi</li>
+                            <li data-tsfilter="samedi">Samedi</li>
+                            <li data-tsfilter="dimanche">Dimanche</li>
                         </ul>
                     </div>
                 </div>
@@ -260,38 +262,47 @@
                     <div class="schedule-table filtering">
                         <table>
                             <tbody>
-                            <tr>
-                                <td class="day-time">Cours de Fitness</td>
-                                <td class="monday ts-item show" data-tsmeta="monday">10:00AM - 11:30AM</td>
-                                <td class="tuesday ts-item" data-tsmeta="tuesday">2:00PM - 3:30PM</td>
-                                <td>William G. Stewart</td>
-                            </tr>
-                            <tr>
-                                <td class="day-time">Formation Musculaire</td>
-                                <td class="friday ts-item" data-tsmeta="friday">10:00AM - 11:30AM</td>
-                                <td class="thursday friday ts-item" data-tsmeta="thursday" data-tsmeta="friday">2:00PM -
-                                    3:30PM
-                                </td>
-                                <td>Paul D. Newman</td>
-                            </tr>
-                            <tr>
-                                <td class="day-time">Culturisme</td>
-                                <td class="tuesday ts-item" data-tsmeta="tuesday">10:00AM - 11:30AM</td>
-                                <td class="monday ts-item show" data-tsmeta="monday">2:00PM - 3:30PM</td>
-                                <td>Boyd C. Harris</td>
-                            </tr>
-                            <tr>
-                                <td class="day-time">Cours de Yoga</td>
-                                <td class="wednesday ts-item" data-tsmeta="wednesday">10:00AM - 11:30AM</td>
-                                <td class="friday ts-item" data-tsmeta="friday">2:00PM - 3:30PM</td>
-                                <td>Hector T. Daigle</td>
-                            </tr>
-                            <tr>
-                                <td class="day-time">Formation Avancée</td>
-                                <td class="thursday ts-item" data-tsmeta="thursday">10:00AM - 11:30AM</td>
-                                <td class="wednesday ts-item" data-tsmeta="wednesday">2:00PM - 3:30PM</td>
-                                <td>Bret D. Bowers</td>
-                            </tr>
+                            @php
+                                $daysOfWeek = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+                            @endphp
+
+                            @foreach($classes as $class)
+                                <tr>
+                                    <td class="day-time">{{ $class->libelle }}</td>
+
+                                    @foreach($daysOfWeek as $day)
+                                        @php
+                                            $morningSchedule = null;
+                                            $afternoonSchedule = null;
+                                        @endphp
+
+                                        @foreach($class->schedules->where('jour', $day) as $schedule)
+                                            @php
+                                                $startTime = \Carbon\Carbon::parse($schedule->start_time);
+                                            @endphp
+                                            @if($startTime->lt(now()->setHour(12)))
+                                                @php
+                                                    $morningSchedule = $schedule->display_time;
+                                                @endphp
+                                            @else
+                                                @php
+                                                    $afternoonSchedule = $schedule->display_time;
+                                                @endphp
+                                            @endif
+                                        @endforeach
+
+                                        <td class="ts-item {{ strtolower($day) }} {{ strtolower($day) === 'lundi' ? 'show' : '' }}" data-tsmeta="{{ strtolower($day) }}">
+                                            {{ $morningSchedule ?? '//' }}
+                                        </td>
+                                        <td class="ts-item {{ strtolower($day) }} {{ strtolower($day) === 'lundi' ? 'show' : '' }}" data-tsmeta="{{ strtolower($day) }}">
+                                            {{ $afternoonSchedule ?? '//' }}
+                                        </td>
+                                    @endforeach
+
+                                    <td>{{ $class->coach ? $class->coach->user->nom : '--' }} {{ $class->coach ? $class->coach->user->prenom : '--' }}</td>
+                                </tr>
+                            @endforeach
+
                             </tbody>
                         </table>
                     </div>
@@ -299,6 +310,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- ***** Testimonials Starts ***** -->
     <section class="section" id="trainers">
@@ -432,5 +445,32 @@
         </div>
     </section>
     <!-- ***** Contact Us Area Ends ***** -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const filters = document.querySelectorAll(".schedule-filter li");
+            const items = document.querySelectorAll(".ts-item");
+
+            filters.forEach(filter => {
+                filter.addEventListener("click", function() {
+                    filters.forEach(f => f.classList.remove("active"));
+                    this.classList.add("active");
+
+                    const day = this.getAttribute("data-tsfilter");
+
+                    items.forEach(item => {
+                        if (item.classList.contains(day)) {
+                            item.classList.add("show");
+                        } else {
+                            item.classList.remove("show");
+                        }
+                    });
+                });
+            });
+
+            filters[0].click();
+        });
+
+    </script>
 
 @endsection

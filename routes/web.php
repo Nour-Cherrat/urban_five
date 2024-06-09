@@ -5,6 +5,7 @@ use App\Http\Controllers\AdherentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\CoachController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\InviteController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('site');
+
+Route::get('/', [Controller::class, 'index'])->name('site');
 
 
 /************************ Auth ************************/
