@@ -79,6 +79,20 @@
                     </ul>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#contact" aria-expanded="false"
+                   aria-controls="ui-basic">
+                    <i class="menu-icon fa fa-envelope-o"></i>
+                    <span class="menu-title">Contact</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="contact">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('contact.index') }}">Liste</a></li>
+                    </ul>
+                </div>
+            </li>
         </ul>
     </nav>
     <!-- partial -->
