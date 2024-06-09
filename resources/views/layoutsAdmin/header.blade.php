@@ -10,11 +10,8 @@
                 </button>
             </div>
             <div>
-                <a class="navbar-brand brand-logo" href="index.html">
-                    <img src="assets/images/logo.svg" alt="logo"/>
-                </a>
-                <a class="navbar-brand brand-logo-mini" href="index.html">
-                    <img src="assets/images/logo-mini.svg" alt="logo"/>
+                <a class="navbar-brand brand-logo" href="{{ route('dashboard') }}">
+                    <img src="assets/images/logo.png" alt="logo"/>
                 </a>
             </div>
         </div>
