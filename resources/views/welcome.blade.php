@@ -409,28 +409,28 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div class="contact-form">
-                        <form id="contact" action="" method="post">
+                        <form id="contact" method="post" action="{{ route('contact.create') }}">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <fieldset>
-                                        <input name="name" type="text" id="name" placeholder="Votre nom" required="">
+                                        <input name="nom" type="text" id="name" placeholder="Votre nom *" required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <fieldset>
-                                        <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*"
-                                               placeholder="Votre adresse email"
+                                        <input name="email" type="email" id="email" placeholder="Votre adresse email *"
                                                required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <fieldset>
-                                        <input name="subject" type="text" id="subject" placeholder="Objet" required="">
+                                        <input name="objet" type="text" id="subject" placeholder="Objet *" required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-12">
                                     <fieldset>
-                                        <textarea name="message" rows="6" id="message" placeholder="Votre message"
+                                        <textarea name="msg" rows="6" id="message" placeholder="Votre message *"
                                                   required=""></textarea>
                                     </fieldset>
                                 </div>
@@ -440,6 +440,11 @@
                                         </button>
                                     </fieldset>
                                 </div>
+                                @if(session('success'))
+                                    <div class="alert alert-success" style="margin-top: 30px">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
                             </div>
                         </form>
                     </div>

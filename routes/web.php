@@ -74,3 +74,4 @@ Route::delete('/invite/delete', [InviteController::class, 'delete'])->name('invi
 
 /************************ Contact ************************/
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index')->middleware('auth');
+Route::post('/contact/create', [ContactController::class, 'create'])->name('contact.create')->middleware('auth');
