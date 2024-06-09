@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             AbonnementSeeder::class,
             InviteSeeder::class,
             ClassScheduleSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }
