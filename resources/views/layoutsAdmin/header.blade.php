@@ -180,9 +180,8 @@
                         <a class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i>
                             Activity</a>
-                        <a class="dropdown-item"><i
-                                class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i>
-                            FAQ</a>
+                        <a class="dropdown-item" href="{{ route('site') }}"><i class="dropdown-item-icon fa fa-sitemap text-primary me-2"></i>
+                            Site</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
                             Out</a>
                     </div>
