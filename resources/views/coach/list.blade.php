@@ -117,7 +117,7 @@
                                         <div class="form-group form-focus select-focus">
                                             <label class="col-form-label">Cours <span
                                                     class="text-danger">*</span></label>
-                                            <select class="select floating" name="id_classe">
+                                            <select class="form-control" name="id_classe">
                                                 <option>Choisir</option>
                                                 @foreach($classes as $classe)
                                                     <option
@@ -195,7 +195,7 @@
                                             <div class="form-group form-focus select-focus">
                                                 <label class="col-form-label">Cours <span
                                                         class="text-danger">*</span></label>
-                                                <select class="select floating" name="id_classe">
+                                                <select class="form-control" name="id_classe">
                                                     <option>Choisir</option>
                                                     @foreach($classes as $classe)
                                                         <option value="{{ $classe->id }}"

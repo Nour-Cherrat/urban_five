@@ -89,7 +89,7 @@
                                         <div class="form-group form-focus select-focus">
                                             <label class="col-form-label">Cours <span
                                                     class="text-danger">*</span></label>
-                                            <select class="select floating" name="id_cours">
+                                            <select class="form-control" name="id_cours">
                                                 <option>Choisir</option>
                                                 @foreach($classes as $classe)
                                                     <option
@@ -102,7 +102,7 @@
                                         <div class="form-group form-focus select-focus">
                                             <label class="col-form-label">Duree <span
                                                     class="text-danger">*</span></label>
-                                            <select class="select floating" name="duree">
+                                            <select class="form-control" name="duree">
                                                 <option>Choisir</option>
                                                 <option>1 Mois</option>
                                                 <option>3 Mois</option>
@@ -150,7 +150,7 @@
                                                 <input type="hidden" name="id" value="{{ $abonnement->id }}">
                                                 <label class="col-form-label">Cours <span
                                                         class="text-danger">*</span></label>
-                                                <select class="select floating" name="id_cours">
+                                                <select class="form-control" name="id_cours">
                                                     <option>Choisir</option>
                                                     @foreach($classes as $classe)
                                                         <option value="{{ $classe->id }}"
@@ -164,7 +164,7 @@
                                             <div class="form-group form-focus select-focus">
                                                 <label class="col-form-label">Duree <span
                                                         class="text-danger">*</span></label>
-                                                <select class="select floating" name="duree"
+                                                <select class="form-control" name="duree"
                                                         value="{{ $abonnement->duree }}">
                                                     <option
                                                         value="1 Mois" {{ $abonnement->duree === '1 Mois' ? 'selected' : '' }}>
