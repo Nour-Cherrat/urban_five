@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Adherent;
 use App\Models\Classe;
+use App\Models\Coach;
 use Illuminate\Http\Request;
 
 class AdherentController extends Controller
@@ -13,10 +14,26 @@ class AdherentController extends Controller
         $adherents = Adherent::all();
         $classes = Classe::all();
 
-        return view('adherent.list')->with([
-            'adherents' => $adherents,
-            'classes' => $classes
-        ]);
+        $user = auth()->user();
+
+        if ($user && $user->type === 'Coach') {
+            $coachClassId = Coach::where('id_user', $user->id)->value('id_classe');
+
+            $adherentsCoach = Adherent::where('id_classe', $coachClassId)->get();
+
+            return view('adherent.list')->with([
+                'adherentsCoach' => $adherentsCoach,
+                'classes' => $classes
+            ]);
+        } else {
+            return view('adherent.list')->with([
+                'adherents' => $adherents,
+                'classes' => $classes
+            ]);
+        }
+
+
+
     }
 
     public function create(Request $request)

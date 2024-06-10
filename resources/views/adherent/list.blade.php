@@ -13,14 +13,16 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Lise des adherents</h4>
-                            <p class="card-description">test <code> test</code>
-                            </p>
+                            @auth
+                                @if(auth()->user()->type === 'Admin')
                             <div class="text-end mb-3">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#add_adherent">
                                     <i class="fa fa-plus"></i> Ajouter un adherent
                                 </button>
                             </div>
+                                @endif
+                            @endauth
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
@@ -34,6 +36,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @auth
+                                        @if(auth()->user()->type === 'Admin')
                                     @foreach($adherents as $index => $adherent)
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
@@ -65,6 +69,30 @@
                                             </td>
                                         </tr>
                                     @endforeach
+                                        @elseif(auth()->user()->type === 'Coach')
+                                    @foreach($adherentsCoach as $index => $adherentCoach)
+                                        <tr>
+                                            <td>{{ $index + 1 }}</td>
+                                            <td> {{ $adherentCoach->nom }} {{ $adherentCoach->prenom }}</td>
+                                            <td> {{ $adherentCoach->date_inscription }}</td>
+                                            <td> {{ $adherentCoach->classe->libelle }}</td>
+                                            <td>
+                                                @if($adherentCoach->statut == 'Actif')
+                                                    <label class="badge badge-success">{{ $adherentCoach->statut }}</label>
+                                                @elseif($adherentCoach->statut == 'Non-actif')
+                                                    <label class="badge badge-danger">{{ $adherentCoach->statut }}</label>
+                                                @endif
+                                            </td>
+                                            <td class="text-right">
+                                                <a class="btn btn-outline-info"
+                                                   href="#"><i
+                                                        class="fa fa-eye"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                        @endif
+                                    @endauth
                                     </tbody>
                                 </table>
                             </div>
@@ -73,6 +101,9 @@
                 </div>
             </div>
 
+
+            @auth
+                @if(auth()->user()->type === 'Admin')
             <!-- Add Adherent Modal -->
             <div class="modal fade" id="add_adherent" tabindex="-1" aria-labelledby="addadherentLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -273,6 +304,9 @@
                 </div>
             </div>
 
+
+                @endif
+            @endauth
         </div>
     </div>
 
