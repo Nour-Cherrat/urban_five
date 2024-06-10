@@ -11,7 +11,7 @@ class Classe extends Model
 
     public function adherents()
     {
-        return $this->hasMany(Adherent::class, 'id_classe');
+        return $this->hasMany(Adherent::class, 'id_classe', 'id');
     }
 
     public function coach()

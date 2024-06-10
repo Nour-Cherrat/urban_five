@@ -41,7 +41,7 @@
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
                                             <td> {{ $classe->libelle }}</td>
-                                            <td> nbr adherent</td>
+                                            <td> {{ $classe->adherents_count }}</td>
                                             <td> {{ $classe->num_salle }}</td>
                                             <td class="text-right">
                                                 <a class="btn btn-outline-info" href="#"><i class="fa fa-eye"></i></a>
@@ -63,7 +63,7 @@
                                                 <tr>
                                                     <td>{{ $index + 1 }}</td>
                                                     <td> {{ $classCoach->libelle }}</td>
-                                                    <td> nbr adherent</td>
+                                                    <td> {{ $classCoach->adherents_count }} </td>
                                                     <td> {{ $classCoach->num_salle }}</td>
                                                     <td class="text-right">
                                                         <a class="btn btn-outline-info" href="#"><i class="fa fa-eye"></i></a>

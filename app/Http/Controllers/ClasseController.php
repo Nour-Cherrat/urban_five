@@ -11,20 +11,21 @@ class ClasseController extends Controller
 {
     public function index()
     {
-        $classes = Classe::all();
+        // $classes = Classe::all();
+        $classes = Classe::withCount('adherents')->get();
 
         $user = auth()->user();
 
         if ($user && $user->type === 'Coach') {
             $coachClassId = Coach::where('id_user', $user->id)->value('id_classe');
-
-            $classCoach = Classe::where('id', $coachClassId)->get();
+            $classCoach = Classe::where('id', $coachClassId)->withCount('adherents')->get();
 
             return view('classe.list')->with([
                 'classCoach' => $classCoach,
                 'classes' => $classes
             ]);
         } else {
+            
             return view('classe.list')->with('classes', $classes);
         }
     }
