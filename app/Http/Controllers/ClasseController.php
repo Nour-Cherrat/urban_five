@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Classe;
 use App\Models\ClassSchedule;
+use App\Models\Coach;
 use Illuminate\Http\Request;
 
 class ClasseController extends Controller
@@ -12,7 +13,20 @@ class ClasseController extends Controller
     {
         $classes = Classe::all();
 
-        return view('classe.list')->with('classes', $classes);
+        $user = auth()->user();
+
+        if ($user && $user->type === 'Coach') {
+            $coachClassId = Coach::where('id_user', $user->id)->value('id_classe');
+
+            $classCoach = Classe::where('id', $coachClassId)->get();
+
+            return view('classe.list')->with([
+                'classCoach' => $classCoach,
+                'classes' => $classes
+            ]);
+        } else {
+            return view('classe.list')->with('classes', $classes);
+        }
     }
 
     public function create(Request $request)

@@ -13,13 +13,16 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Liste des cours</h4>
-                            <p class="card-description">test <code>test</code></p>
+                            @auth
+                                @if(auth()->user()->type === 'Admin')
                             <div class="text-end mb-3">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#add_cours">
                                     <i class="fa fa-plus"></i> Ajouter un cours
                                 </button>
                             </div>
+                                @endif
+                            @endauth
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
@@ -32,6 +35,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @auth
+                                        @if(auth()->user()->type === 'Admin')
                                     @foreach($classes as $index => $classe)
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
@@ -53,6 +58,25 @@
                                             </td>
                                         </tr>
                                     @endforeach
+                                        @elseif(auth()->user()->type === 'Coach')
+                                            @foreach($classCoach as $index => $classCoach)
+                                                <tr>
+                                                    <td>{{ $index + 1 }}</td>
+                                                    <td> {{ $classCoach->libelle }}</td>
+                                                    <td> nbr adherent</td>
+                                                    <td> {{ $classCoach->num_salle }}</td>
+                                                    <td class="text-right">
+                                                        <a class="btn btn-outline-info" href="#"><i class="fa fa-eye"></i></a>
+                                                        <button type="button" class="btn btn-outline-warning"
+                                                                data-bs-toggle="modal" data-id="{{ $classCoach->id }}"
+                                                                data-bs-target="#edit_cours{{ $classCoach->id }}">
+                                                            <i class="fa fa-pencil"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endif
+                                    @endauth
                                     </tbody>
                                 </table>
                             </div>
@@ -61,6 +85,9 @@
                 </div>
             </div>
 
+
+            @auth
+                @if(auth()->user()->type === 'Admin')
             <!-- Add Cours Modal -->
             <div class="modal fade" id="add_cours" tabindex="-1" aria-labelledby="addcoursLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -143,6 +170,8 @@
                     </div>
                 </div>
             </div>
+                @endif
+            @endauth
 
             <!-- Update Cours Modal -->
             @foreach($classes as $classe)
