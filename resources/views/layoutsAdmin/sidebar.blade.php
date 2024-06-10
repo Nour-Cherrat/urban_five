@@ -9,6 +9,8 @@
                 </a>
             </li>
             <li class="nav-item nav-category">Salle de sport</li>
+            @auth
+                @if(auth()->user()->type === 'Admin')
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#coaches" aria-expanded="false"
                    aria-controls="ui-basic">
@@ -23,6 +25,8 @@
                     </ul>
                 </div>
             </li>
+                @endif
+            @endauth
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#adherents" aria-expanded="false"
                    aria-controls="ui-basic">
@@ -65,6 +69,8 @@
                     </ul>
                 </div>
             </li>
+            @auth
+                @if(auth()->user()->type === 'Admin')
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#abonnement" aria-expanded="false"
                    aria-controls="ui-basic">
@@ -93,6 +99,8 @@
                     </ul>
                 </div>
             </li>
+                @endif
+            @endauth
         </ul>
     </nav>
     <!-- partial -->
