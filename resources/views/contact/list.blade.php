@@ -37,11 +37,11 @@
                                             <td>{{ $index + 1 }}</td>
                                             <td> {{ $contact->nom }} </td>
                                             <td> {{ $contact->objet }} </td>
-                                            <td> {{ optional($contact->created_at)->format('Y-m-d - H:i:s') }}
+                                            <td> {{ optional($contact->created_at)->format('Y-m-d - H:i:s') ?? '- -' }}
                                             </td>
                                             <td class="text-right">
                                                 <a class="btn btn-outline-info"
-                                                   href="#"><i
+                                                   href="{{ route('contact.details', ['id' => $contact->id]) }}"><i
                                                         class="fa fa-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger"

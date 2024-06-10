@@ -38,4 +38,13 @@ class ContactController extends Controller
 
         return redirect()->route('contact.index');
     }
+
+    public function details(Request $request)
+    {
+
+        $contact = Contact::findOrFail($request->input('id'));
+
+        return view('contact.details')->with('contact', $contact);
+
+    }
 }
