@@ -179,8 +179,7 @@
                             Activity</a>
                         <a class="dropdown-item" href="{{ route('site') }}"><i class="dropdown-item-icon fa fa-sitemap text-primary me-2"></i>
                             Site</a>
-                        <a class="dropdown-item" href="{{ route('logout') }}"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
-                            Out</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i> Déconnexion</a>
                     </div>
                 </li>
             </ul>

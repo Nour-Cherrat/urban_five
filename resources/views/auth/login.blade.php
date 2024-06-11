@@ -14,10 +14,10 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="{{ asset('assets/images/logo.svg') }}" alt="logo">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                             </div>
-                            <h4>Hello! let's get started</h4>
-                            <h6 class="fw-light">Sign in to continue.</h6>
+                            <h4>Bonjour !</h4>
+                            <h6 class="fw-light">Se connecter pour continuer.</h6>
                             <form class="pt-3" method="post" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group">
@@ -31,6 +31,7 @@
                                 <div class="mt-3 d-grid gap-2">
                                     <button class="btn btn-primary account-btn" type="submit">Se connecter</button>
                                 </div>
+                                <!--
                                 <div class="my-2 d-flex justify-content-between align-items-center">
                                     <div class="form-check">
                                         <label class="form-check-label text-muted">
@@ -38,8 +39,9 @@
                                     </div>
                                     <a href="#" class="auth-link text-black">Forgot password?</a>
                                 </div>
-                                <div class="text-center mt-4 fw-light"> Don't have an account? <a href="register.html"
-                                                                                                  class="text-primary">Create</a>
+                                -->
+                                <div class="text-center mt-4 fw-light"> Vous n'avez pas de compte ?
+                                    <a href="{{ route('register') }}" class="text-primary">S'inscrire</a>
                                 </div>
                             </form>
                         </div>
