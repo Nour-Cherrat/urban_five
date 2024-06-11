@@ -49,5 +49,14 @@ class UserSeeder extends Seeder
             'tel' => '0643219875',
             'type' => 'Coach',
         ]);
+
+        DB::table('users')->insert([
+            'nom' => 'adherent 1',
+            'prenom' => 'adherent 1',
+            'email' => 'adherent@gmail.com',
+            'password' => Hash::make('password'),
+            'tel' => '0643219875',
+            'type' => 'Adherent',
+        ]);
     }
 }
