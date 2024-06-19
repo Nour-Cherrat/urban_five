@@ -24,7 +24,7 @@
                                     <thead>
                                     <tr>
                                         <th> #</th>
-                                        <th> Libelle </th>
+                                        <th> Libelle</th>
                                         <th> Description</th>
                                         <th> Type</th>
                                         <th> Statut</th>
@@ -56,10 +56,6 @@
                                                 @endif
                                             </td>
                                             <td class="text-right">
-                                                <a class="btn btn-outline-primary update-status-btn" href="#"
-                                                   data-activite-id="{{ $activite->id }}">
-                                                    <i class="fa fa-rotate-right"></i>
-                                                </a>
                                                 <button type="button" class="btn btn-outline-warning"
                                                         data-bs-toggle="modal" data-id="{{ $activite->id }}"
                                                         data-bs-target="#edit_activite{{ $activite->id }}">
@@ -82,6 +78,65 @@
                 </div>
             </div>
 
+
+            <!-- Add Activite Modal -->
+            <div class="modal fade" id="add_activite" tabindex="-1" aria-labelledby="addactiviteLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addactiviteLabel">Ajouter une activite</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="{{ route('activite.create') }}">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Libelle <span class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" name="libelle">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Description <span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" name="description">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-focus select-focus">
+                                            <label class="col-form-label">Type <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control" name="type">
+                                                <option>Choisir</option>
+                                                <option>Individuelle</option>
+                                                <option>Collective</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-focus select-focus">
+                                            <label class="col-form-label">Statut <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control" name="statut">
+                                                <option>Choisir</option>
+                                                <option>Actif</option>
+                                                <option>Non-actif</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="submit-section">
+                                    <button class="btn btn-primary submit-btn">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
