@@ -43,6 +43,7 @@ Route::get('/cours', [ClasseController::class, 'index'])->name('cours.index')->m
 Route::post('/cours/create', [ClasseController::class, 'create'])->name('cours.create')->middleware('auth');
 Route::post('/cours/update', [ClasseController::class, 'update'])->name('cours.update')->middleware('auth');
 Route::delete('/cours/delete', [ClasseController::class, 'delete'])->name('cours.delete')->middleware('auth');
+Route::get('/cours/details', [ClasseController::class, 'details'])->name('cours.details')->middleware('auth');
 
 
 /************************ Adherent ************************/
