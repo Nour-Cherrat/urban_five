@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('id_classe')->constrained('classes')->index('id_classe_adherents')->onDelete('cascade');
             $table->string('nom');
             $table->string('prenom');
+            $table->string('adresse')->nullable();
+            $table->string('ville')->nullable();
             $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
@@ -23,6 +25,7 @@ return new class extends Migration
             $table->enum('gender', ['F', 'M'])->default('M');
             $table->date('date_inscription');
             $table->date('date_fin')->nullable();
+            $table->date('date_naissance')->nullable();
             $table->enum('statut', ['Actif', 'Non-actif'])->default('Actif');
             $table->timestamps();
         });
