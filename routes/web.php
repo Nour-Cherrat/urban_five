@@ -10,6 +10,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\InviteController;
 use App\Http\Controllers\SalleController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -98,3 +99,7 @@ Route::get('/salle', [SalleController::class, 'index'])->name('salle.index')->mi
 Route::post('/salle/create', [SalleController::class, 'create'])->name('salle.create')->middleware('auth');
 Route::post('/salle/update', [SalleController::class, 'update'])->name('salle.update')->middleware('auth');
 Route::delete('/salle/delete', [SalleController::class, 'delete'])->name('salle.delete')->middleware('auth');
+
+
+/************************ Service ************************/
+Route::get('/service', [ServiceController::class, 'index'])->name('service.index')->middleware('auth');

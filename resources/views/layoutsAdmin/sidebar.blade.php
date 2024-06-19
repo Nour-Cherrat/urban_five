@@ -127,6 +127,20 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#service" aria-expanded="false"
+                           aria-controls="ui-basic">
+                            <i class="menu-icon fmdi fa fa-list-alt"></i>
+                            <span class="menu-title">Service</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="service">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('service.index') }}">Liste</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 @endif
             @endauth
         </ul>
