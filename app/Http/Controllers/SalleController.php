@@ -39,4 +39,13 @@ class SalleController extends Controller
 
         return redirect()->route('salle.index');
     }
+
+    public function delete(Request $request)
+    {
+        $salleId = $request->input('salleId');
+
+        Salle::destroy($salleId);
+
+        return redirect()->route('salle.index');
+    }
 }

@@ -97,3 +97,4 @@ Route::delete('/activite/delete', [ActiviteController::class, 'delete'])->name('
 Route::get('/salle', [SalleController::class, 'index'])->name('salle.index')->middleware('auth');
 Route::post('/salle/create', [SalleController::class, 'create'])->name('salle.create')->middleware('auth');
 Route::post('/salle/update', [SalleController::class, 'update'])->name('salle.update')->middleware('auth');
+Route::delete('/salle/delete', [SalleController::class, 'delete'])->name('salle.delete')->middleware('auth');
