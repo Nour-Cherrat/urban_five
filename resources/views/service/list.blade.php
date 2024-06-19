@@ -142,6 +142,40 @@
             @endforeach
 
 
+            <!-- Delete service Modal -->
+            <div class="modal fade" id="delete_service" tabindex="-1" aria-labelledby="deleteserviceLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Suuprimer</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-header">
+                                <p>Êtes-vous sûr de vouloir supprimer le service ?</p>
+                            </div>
+                            <div class="modal-btn delete-action">
+                                <form method="POST" action="{{ route('service.delete') }}" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="hidden" name="serviceId" id="serviceId" value="">
+                                            <button type="submit"
+                                                    class="btn btn-primary continue-btn submit-btn">
+                                                Supprimer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>

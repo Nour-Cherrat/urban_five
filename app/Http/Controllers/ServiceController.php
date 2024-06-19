@@ -37,4 +37,13 @@ class ServiceController extends Controller
 
         return redirect()->route('service.index');
     }
+
+    public function delete(Request $request)
+    {
+        $serviceId = $request->input('serviceId');
+
+        Service::destroy($serviceId);
+
+        return redirect()->route('service.index');
+    }
 }
