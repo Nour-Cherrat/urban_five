@@ -11,12 +11,18 @@
         <div class="container-fluid page-body-wrapper full-page-wrapper">
             <div class="content-wrapper d-flex align-items-center auth px-0">
                 <div class="row w-100 mx-0">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-lg-7 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                             </div>
                             <h4>Vous êtes nouveau ?</h4>
+
+                            @if(session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                            @endif
 
                             <form id="registrationForm" method="post" action="{{ route('register') }}">
                                 @csrf
@@ -50,13 +56,19 @@
                                                 <input class="form-control floating" type="password" name="password">
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="col-form-label">Tel <span class="text-danger">*</span></label>
                                                 <input class="form-control floating" type="number" name="tel">
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Adresse <span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="adresse">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
                                             <div class="form-group form-focus select-focus">
                                                 <label class="col-form-label">Sexe <span
                                                         class="text-danger">*</span></label>
@@ -67,9 +79,9 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group form-focus select-focus">
-                                                <label class="col-form-label">Cours <span
+                                                <label class="col-form-label">Type de sport <span
                                                         class="text-danger">*</span></label>
                                                 <select class="form-control" name="id_classe">
                                                     <option>Choisir</option>
