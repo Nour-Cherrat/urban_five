@@ -102,4 +102,13 @@ class ClasseController extends Controller
 
         return redirect()->route('cours.index');
     }
+
+    public function details(Request $request)
+    {
+
+        $classe = Classe::findOrFail($request->input('id'));
+
+        return view('classe.details')->with('classe', $classe);
+
+    }
 }

@@ -44,7 +44,10 @@
                                             <td> {{ $classe->adherents_count }}</td>
                                             <td> {{ $classe->num_salle }}</td>
                                             <td class="text-right">
-                                                <a class="btn btn-outline-info" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="btn btn-outline-info"
+                                                   href="{{ route('cours.details', ['id' => $classe->id]) }}"><i
+                                                        class="fa fa-eye"></i>
+                                                </a>
                                                 <button type="button" class="btn btn-outline-warning"
                                                         data-bs-toggle="modal" data-id="{{ $classe->id }}"
                                                         data-bs-target="#edit_cours{{ $classe->id }}">
