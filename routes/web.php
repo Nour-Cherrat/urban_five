@@ -95,3 +95,4 @@ Route::delete('/activite/delete', [ActiviteController::class, 'delete'])->name('
 
 /************************ Salle ************************/
 Route::get('/salle', [SalleController::class, 'index'])->name('salle.index')->middleware('auth');
+Route::post('/salle/create', [SalleController::class, 'create'])->name('salle.create')->middleware('auth');

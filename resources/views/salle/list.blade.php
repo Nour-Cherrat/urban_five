@@ -59,6 +59,51 @@
             </div>
 
 
+            <!-- Add salle Modal -->
+            <div class="modal fade" id="add_salle" tabindex="-1" aria-labelledby="addsalleLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addsalleLabel">Ajouter une salle</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="{{ route('salle.create') }}">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Num  <span class="text-danger">*</span></label>
+                                            <input class="form-control" type="number" name="numSE">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Nom  <span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" name="nomSE">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Superficie <span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" type="number" name="superficieSE">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="submit-section">
+                                    <button class="btn btn-primary submit-btn">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
         </div>
     </div>

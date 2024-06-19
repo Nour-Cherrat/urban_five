@@ -13,4 +13,17 @@ class SalleController extends Controller
 
         return view('salle.list')->with('salles', $salles);
     }
+
+    public function create(Request $request)
+    {
+        $salle = new Salle();
+
+        $salle->numSE = $request->numSE;
+        $salle->nomSE = $request->nomSE;
+        $salle->superficieSE = $request->superficieSE;
+
+        $salle->save();
+
+        return redirect()->back();
+    }
 }
