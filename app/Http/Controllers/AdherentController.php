@@ -95,4 +95,12 @@ class AdherentController extends Controller
         return response()->json(['message' => 'Status updated successfully', 'new_status' => $adherent->statut]);
     }
 
+    public function profile(Request $request)
+    {
+
+        $adherent = Adherent::findOrFail($request->input('id'));
+
+        return view('adherent.profile')->with('adherent', $adherent);
+
+    }
 }
