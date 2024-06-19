@@ -11,20 +11,20 @@
             <li class="nav-item nav-category">Salle de sport</li>
             @auth
                 @if(auth()->user()->type === 'Admin')
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#coaches" aria-expanded="false"
-                   aria-controls="ui-basic">
-                    <i class="menu-icon fa fa-users"></i>
-                    <span class="menu-title">Coaches</span>
-                    <i class="menu-arrow"></i>
-                </a>
-                <div class="collapse" id="coaches">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('coach.index') }}">Liste</a></li>
-                    </ul>
-                </div>
-            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#coaches" aria-expanded="false"
+                           aria-controls="ui-basic">
+                            <i class="menu-icon fa fa-users"></i>
+                            <span class="menu-title">Coaches</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="coaches">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('coach.index') }}">Liste</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 @endif
             @endauth
             <li class="nav-item">
@@ -71,34 +71,48 @@
             </li>
             @auth
                 @if(auth()->user()->type === 'Admin')
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#abonnement" aria-expanded="false"
-                   aria-controls="ui-basic">
-                    <i class="menu-icon fa fa-folder-open-o"></i>
-                    <span class="menu-title">Abonnement</span>
-                    <i class="menu-arrow"></i>
-                </a>
-                <div class="collapse" id="abonnement">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('abonnement.index') }}">Liste</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#contact" aria-expanded="false"
-                   aria-controls="ui-basic">
-                    <i class="menu-icon fa fa-envelope-o"></i>
-                    <span class="menu-title">Contact</span>
-                    <i class="menu-arrow"></i>
-                </a>
-                <div class="collapse" id="contact">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact.index') }}">Liste</a></li>
-                    </ul>
-                </div>
-            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#abonnement" aria-expanded="false"
+                           aria-controls="ui-basic">
+                            <i class="menu-icon fa fa-folder-open-o"></i>
+                            <span class="menu-title">Abonnement</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="abonnement">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('abonnement.index') }}">Liste</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#contact" aria-expanded="false"
+                           aria-controls="ui-basic">
+                            <i class="menu-icon fa fa-envelope-o"></i>
+                            <span class="menu-title">Contact</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="contact">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('contact.index') }}">Liste</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#activite" aria-expanded="false"
+                           aria-controls="ui-basic">
+                            <i class="menu-icon fa fa-paper-plane-o"></i>
+                            <span class="menu-title">Activite</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="activite">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('activite.index') }}">Liste</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 @endif
             @endauth
         </ul>

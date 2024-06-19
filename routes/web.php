@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AbonnementController;
+use App\Http\Controllers\ActiviteController;
 use App\Http\Controllers\AdherentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
@@ -83,3 +84,6 @@ Route::post('/contact/create', [ContactController::class, 'create'])->name('cont
 Route::delete('/contact/delete', [ContactController::class, 'delete'])->name('contact.delete')->middleware('auth');
 Route::get('/contact/details', [ContactController::class, 'details'])->name('contact.details')->middleware('auth');
 
+
+/************************ Activite ************************/
+Route::get('/activite', [ActiviteController::class, 'index'])->name('activite.index')->middleware('auth');
