@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             ContactSeeder::class,
             ActiviteSeeder::class,
             SalleSeeder::class,
+            ServiceSeeder::class,
         ]);
     }
 }
