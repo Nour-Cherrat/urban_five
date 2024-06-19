@@ -217,6 +217,42 @@
                 </div>
             @endforeach
 
+
+            <!-- Delete Activite Modal -->
+            <div class="modal fade" id="delete_activite" tabindex="-1" aria-labelledby="deleteactiviteLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Suuprimer</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-header">
+                                <p>Êtes-vous sûr de vouloir supprimer l'activite ?</p>
+                            </div>
+                            <div class="modal-btn delete-action">
+                                <form method="POST" action="{{ route('activite.delete') }}" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="hidden" name="activiteId" id="activiteId" value="">
+                                            <button type="submit"
+                                                    class="btn btn-primary continue-btn submit-btn">
+                                                Supprimer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 

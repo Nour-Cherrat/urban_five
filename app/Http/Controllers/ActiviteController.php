@@ -41,4 +41,13 @@ class ActiviteController extends Controller
 
         return redirect()->route('activite.index');
     }
+
+    public function delete(Request $request)
+    {
+        $activiteId = $request->input('activiteId');
+
+        Activite::destroy($activiteId);
+
+        return redirect()->route('activite.index');
+    }
 }
