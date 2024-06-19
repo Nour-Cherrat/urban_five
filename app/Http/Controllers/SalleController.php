@@ -26,4 +26,17 @@ class SalleController extends Controller
 
         return redirect()->back();
     }
+
+    public function update(Request $request)
+    {
+        $salle = Salle::findOrFail($request->input('id'));
+
+        $salle->numSE = $request->input('numSE');
+        $salle->nomSE = $request->input('nomSE');
+        $salle->superficieSE = $request->input('superficieSE');
+
+        $salle->save();
+
+        return redirect()->route('salle.index');
+    }
 }

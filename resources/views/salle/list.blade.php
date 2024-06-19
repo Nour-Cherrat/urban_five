@@ -104,6 +104,59 @@
             </div>
 
 
+            <!-- Update salle Modal -->
+            @foreach($salles as $salle)
+                <div class="modal fade" id="edit_salle{{ $salle->id }}" tabindex="-1"
+                     aria-labelledby="editsalleLabel{{ $salle->id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editsalleLabel{{ $salle->id }}">Modifier une
+                                    salle</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="{{ route('salle.update') }}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="hidden" name="id" value="{{ $salle->id }}">
+                                                <label class="col-form-label">Num <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="number" name="numSE"
+                                                       value="{{ $salle->numSE }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Nom <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="nomSE"
+                                                       value="{{ $salle->nomSE }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Superficie <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="number" name="superficieSE"
+                                                       value="{{ $salle->superficieSE }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="submit-section">
+                                        <button class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+
 
         </div>
     </div>
