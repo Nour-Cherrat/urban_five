@@ -97,6 +97,52 @@
             </div>
 
 
+            <!-- Update service Modal -->
+            @foreach($services as $service)
+                <div class="modal fade" id="edit_service{{ $service->id }}" tabindex="-1"
+                     aria-labelledby="editserviceLabel{{ $service->id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editserviceLabel{{ $service->id }}">Modifier un
+                                    service</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="{{ route('service.update') }}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="hidden" name="id" value="{{ $service->id }}">
+                                                <label class="col-form-label">Libelle <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="libelle"
+                                                       value="{{ $service->libelle }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Description <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="description"
+                                                       value="{{ $service->description }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="submit-section">
+                                        <button class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+
+
         </div>
     </div>
 

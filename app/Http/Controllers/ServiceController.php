@@ -25,4 +25,16 @@ class ServiceController extends Controller
 
         return redirect()->back();
     }
+
+    public function update(Request $request)
+    {
+        $service = Service::findOrFail($request->input('id'));
+
+        $service->libelle = $request->input('libelle');
+        $service->description = $request->input('description');
+
+        $service->save();
+
+        return redirect()->route('service.index');
+    }
 }
