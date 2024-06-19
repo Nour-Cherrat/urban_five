@@ -29,8 +29,7 @@
                                         <th> Nom Prenom</th>
                                         <th> Cours</th>
                                         <th> Salaire</th>
-                                        <th> Stats 1</th>
-                                        <th> Stats 2</th>
+                                        <th> Nbr des adherents</th>
                                         <th> Action</th>
                                     </tr>
                                     </thead>
@@ -41,8 +40,7 @@
                                             <td> {{ $coach->user->nom }} {{ $coach->user->prenom }}</td>
                                             <td> {{ $coach->classe->libelle }}</td>
                                             <td> {{ $coach->salaire }} DH</td>
-                                            <td class="text-danger"> 2 <i class="ti-arrow-down"></i></td>
-                                            <td class="text-success"> 8 <i class="ti-arrow-up"></i></td>
+                                            <td class="text-success"> {{ $studentsCount[$coach->id] }} <i class="ti-arrow-up"></i></td>
                                             <td class="text-right">
                                                 <a class="btn btn-outline-info"
                                                    href="#"><i
@@ -115,7 +113,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group form-focus select-focus">
-                                            <label class="col-form-label">Cours <span
+                                            <label class="col-form-label">Type de sport <span
                                                     class="text-danger">*</span></label>
                                             <select class="form-control" name="id_classe">
                                                 <option>Choisir</option>
@@ -193,7 +191,7 @@
                                     </div>
                                         <div class="col-md-6">
                                             <div class="form-group form-focus select-focus">
-                                                <label class="col-form-label">Cours <span
+                                                <label class="col-form-label">Type de sport <span
                                                         class="text-danger">*</span></label>
                                                 <select class="form-control" name="id_classe">
                                                     <option>Choisir</option>

@@ -14,9 +14,23 @@ class CoachController extends Controller
         $coaches = Coach::all();
         $classes = Classe::all();
 
+        $currentMonth = now()->format('m');
+        $studentsCount = [];
+
+        foreach ($coaches as $coach) {
+            $class = $coach->classe;
+
+            $studentsEnrolled = $class->adherents()
+                ->whereMonth('created_at', $currentMonth)
+                ->count();
+
+            $studentsCount[$coach->id] = $studentsEnrolled;
+        }
+
         return view('coach.list')->with([
             'coaches' => $coaches,
-            'classes' => $classes
+            'classes' => $classes,
+            'studentsCount' => $studentsCount
         ]);
     }
 
