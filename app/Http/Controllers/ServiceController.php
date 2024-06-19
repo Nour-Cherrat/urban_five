@@ -13,4 +13,16 @@ class ServiceController extends Controller
 
         return view('service.list')->with('services', $services);
     }
+
+    public function create(Request $request)
+    {
+        $service = new Service();
+
+        $service->libelle = $request->libelle;
+        $service->description = $request->description;
+
+        $service->save();
+
+        return redirect()->back();
+    }
 }

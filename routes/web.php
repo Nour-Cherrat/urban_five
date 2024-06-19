@@ -103,3 +103,4 @@ Route::delete('/salle/delete', [SalleController::class, 'delete'])->name('salle.
 
 /************************ Service ************************/
 Route::get('/service', [ServiceController::class, 'index'])->name('service.index')->middleware('auth');
+Route::post('/service/create', [ServiceController::class, 'create'])->name('service.create')->middleware('auth');
