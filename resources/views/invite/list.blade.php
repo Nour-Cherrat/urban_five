@@ -41,7 +41,7 @@
                                             <td> {{ $invite->classe->libelle }}</td>
                                             <td class="text-right">
                                                 <a class="btn btn-outline-info"
-                                                   href="#"><i
+                                                   href="{{ route('invite.profile', ['id' => $invite->id]) }}"><i
                                                         class="fa fa-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-warning"

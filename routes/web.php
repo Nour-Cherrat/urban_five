@@ -73,7 +73,7 @@ Route::get('/invite', [InviteController::class, 'index'])->name('invite.index')-
 Route::post('/invite/create', [InviteController::class, 'create'])->name('invite.create')->middleware('auth');
 Route::post('/invite/update', [InviteController::class, 'update'])->name('invite.update')->middleware('auth');
 Route::delete('/invite/delete', [InviteController::class, 'delete'])->name('invite.delete')->middleware('auth');
-
+Route::get('/invite/profile', [InviteController::class, 'profile'])->name('invite.profile')->middleware('auth');
 
 /************************ Contact ************************/
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index')->middleware('auth');

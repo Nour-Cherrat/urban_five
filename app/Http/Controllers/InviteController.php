@@ -64,4 +64,23 @@ class InviteController extends Controller
         return redirect()->route('invite.index');
     }
 
+    public function profile(Request $request)
+    {
+        $invite = Invite::findOrFail($request->input('id'));
+
+        $visitData = Invite::where('nom', $invite->nom)
+            ->where('nom', $invite->nom)
+            ->where('prenom', $invite->prenom)
+            ->with('classe')
+            ->get();
+
+        $visitsCount = $visitData->count();
+        $visitHistory = $visitData;
+
+        return view('invite.profile')->with([
+            'invite' => $invite,
+            'visitsCount' => $visitsCount,
+            'visitHistory' => $visitHistory,
+        ]);
+    }
 }
