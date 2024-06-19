@@ -31,9 +31,6 @@ class AdherentController extends Controller
                 'classes' => $classes
             ]);
         }
-
-
-
     }
 
     public function create(Request $request)
@@ -42,9 +39,12 @@ class AdherentController extends Controller
 
         $adherent->nom = $request->nom;
         $adherent->prenom = $request->prenom;
+        $adherent->adresse = $request->adresse;
+        $adherent->ville = $request->ville;
         $adherent->email = $request->email;
         $adherent->tel = $request->tel;
         $adherent->date_inscription = $request->date_inscription;
+        $adherent->date_naissance = $request->date_naissance;
         $adherent->gender = $request->gender;
         $adherent->id_classe = $request->id_classe;
 
@@ -58,10 +58,13 @@ class AdherentController extends Controller
 
         $adherent->nom = $request->input('nom');
         $adherent->prenom = $request->input('prenom');
+        $adherent->adresse = $request->input('adresse');
+        $adherent->ville = $request->input('ville');
         $adherent->email = $request->input('email');
         $adherent->tel = $request->input('tel');
         $adherent->date_inscription = $request->input('date_inscription');
         $adherent->date_fin = $request->input('date_fin');
+        $adherent->date_naissance = $request->input('date_naissance');
         $adherent->gender = $request->input('gender');
         $adherent->id_classe = $request->input('id_classe');
 
@@ -77,6 +80,19 @@ class AdherentController extends Controller
         Adherent::destroy($adherentId);
 
         return redirect()->route('adherent.index');
+    }
+
+    public function updateStatus($id)
+    {
+        $adherent = Adherent::find($id);
+        if (!$adherent) {
+            return response()->json(['error' => 'Adherent not found'], 404);
+        }
+
+        $adherent->statut = $adherent->statut == 'Actif' ? 'Non-actif' : 'Actif';
+        $adherent->save();
+
+        return response()->json(['message' => 'Status updated successfully', 'new_status' => $adherent->statut]);
     }
 
 }

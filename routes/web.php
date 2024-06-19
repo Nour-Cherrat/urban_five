@@ -51,6 +51,7 @@ Route::get('/adherent', [AdherentController::class, 'index'])->name('adherent.in
 Route::post('/adherent/create', [AdherentController::class, 'create'])->name('adherent.create')->middleware('auth');
 Route::post('/adherent/update', [AdherentController::class, 'update'])->name('adherent.update')->middleware('auth');
 Route::delete('/adherent/delete', [AdherentController::class, 'delete'])->name('adherent.delete')->middleware('auth');
+Route::post('/adherent/update-status/{id}', [AdherentController::class, 'updateStatus'])->name('adherent.updateStatus');
 
 
 /************************ Coach ************************/
