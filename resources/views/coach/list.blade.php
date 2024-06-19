@@ -43,7 +43,7 @@
                                             <td class="text-success"> {{ $studentsCount[$coach->id] }} <i class="ti-arrow-up"></i></td>
                                             <td class="text-right">
                                                 <a class="btn btn-outline-info"
-                                                   href="#"><i
+                                                   href="{{ route('coach.profile', ['id' => $coach->id]) }}"><i
                                                         class="fa fa-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-warning"

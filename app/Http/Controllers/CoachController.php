@@ -88,4 +88,17 @@ class CoachController extends Controller
 
         return redirect()->route('coach.index');
     }
+
+    public function profile(Request $request)
+    {
+        $coach = Coach::findOrFail($request->input('id'));
+        $class = $coach->classe;
+
+        $totalStudentsCount = $class->adherents()->count();
+
+        return view('coach.profile')->with([
+            'coach' => $coach,
+            'totalStudentsCount' => $totalStudentsCount,
+        ]);
+    }
 }
