@@ -15,8 +15,8 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'nom' => 'Cherrat',
-            'prenom' => 'Nour',
+            'nom' => 'EL AIDER',
+            'prenom' => 'FAIZA',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password'),
             'tel' => '0643219875',
@@ -45,6 +45,15 @@ class UserSeeder extends Seeder
             'nom' => 'coach3',
             'prenom' => 'coach3',
             'email' => 'coachee@gmail.com',
+            'password' => Hash::make('password'),
+            'tel' => '0643219875',
+            'type' => 'Coach',
+        ]);
+
+        DB::table('users')->insert([
+            'nom' => 'coach4',
+            'prenom' => 'coach4',
+            'email' => 'coacheee@gmail.com',
             'password' => Hash::make('password'),
             'tel' => '0643219875',
             'type' => 'Coach',
