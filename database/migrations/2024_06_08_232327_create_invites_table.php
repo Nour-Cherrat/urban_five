@@ -20,6 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('tel')->nullable();
             $table->enum('gender', ['F', 'M'])->default('M');
+            $table->date('date_naissance')->nullable();
             $table->date('date');
             $table->timestamps();
         });

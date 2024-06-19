@@ -27,7 +27,7 @@
                                     <tr>
                                         <th> #</th>
                                         <th> Nom Prenom</th>
-                                        <th> Date Inscription</th>
+                                        <th> Date</th>
                                         <th> Cours</th>
                                         <th> Action</th>
                                     </tr>
@@ -91,7 +91,24 @@
                                             <input class="form-control" type="text" name="prenom">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-focus select-focus">
+                                            <label class="col-form-label">Sexe <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control" name="gender">
+                                                <option>Choisir</option>
+                                                <option>F</option>
+                                                <option>M</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Date de naissance</label>
+                                            <input class="form-control" type="date" name="date_naissance">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="col-form-label">Email </label>
                                             <input class="form-control floating" type="email" name="email">
@@ -107,17 +124,6 @@
                                         <div class="form-group">
                                             <label class="col-form-label">Date</label>
                                             <input class="form-control" type="date" name="date">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group form-focus select-focus">
-                                            <label class="col-form-label">Sexe <span
-                                                    class="text-danger">*</span></label>
-                                            <select class="form-control" name="gender">
-                                                <option>Choisir</option>
-                                                <option>F</option>
-                                                <option>M</option>
-                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -173,7 +179,29 @@
                                                 <input class="form-control" type="text" name="prenom" value="{{ $invite->prenom }}">
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-focus select-focus">
+                                                <label class="col-form-label">Sexe <span
+                                                        class="text-danger">*</span></label>
+                                                <select class="form-control" name="gender" value="{{ $invite->gender }}">
+                                                    <option
+                                                        value="F" {{ $invite->gender === 'F' ? 'selected' : '' }}>
+                                                        F
+                                                    </option>
+                                                    <option
+                                                        value="M" {{ $invite->gender === 'M' ? 'selected' : '' }}>
+                                                        M
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Date de naissance</label>
+                                                <input class="form-control" type="date" name="date_naissance" value="{{ $invite->date_naissance }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="col-form-label">Email </label>
                                                 <input class="form-control floating" type="email" name="email" value="{{ $invite->email }}">
@@ -189,22 +217,6 @@
                                             <div class="form-group">
                                                 <label class="col-form-label">Date inscription</label>
                                                 <input class="form-control" type="date" name="date" value="{{ $invite->date }}">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group form-focus select-focus">
-                                                <label class="col-form-label">Sexe <span
-                                                        class="text-danger">*</span></label>
-                                                <select class="form-control" name="gender" value="{{ $invite->gender }}">
-                                                    <option
-                                                        value="F" {{ $invite->gender === 'F' ? 'selected' : '' }}>
-                                                        F
-                                                    </option>
-                                                    <option
-                                                        value="M" {{ $invite->gender === 'M' ? 'selected' : '' }}>
-                                                        M
-                                                    </option>
-                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6">

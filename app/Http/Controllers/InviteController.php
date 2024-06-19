@@ -28,6 +28,7 @@ class InviteController extends Controller
         $invite->email = $request->email;
         $invite->tel = $request->tel;
         $invite->date = $request->date;
+        $invite->date_naissance = $request->date_naissance;
         $invite->gender = $request->gender;
         $invite->id_classe = $request->id_classe;
 
@@ -45,6 +46,7 @@ class InviteController extends Controller
         $invite->email = $request->input('email');
         $invite->tel = $request->input('tel');
         $invite->date = $request->input('date');
+        $invite->date_naissance = $request->input('date_naissance');
         $invite->gender = $request->input('gender');
         $invite->id_classe = $request->input('id_classe');
 
