@@ -138,6 +138,85 @@
                 </div>
             </div>
 
+
+            <!-- Update Activite Modal -->
+            @foreach($activites as $activite)
+                <div class="modal fade" id="edit_activite{{ $activite->id }}" tabindex="-1"
+                     aria-labelledby="editactiviteLabel{{ $activite->id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editactiviteLabel{{ $activite->id }}">Modifier une
+                                    activite</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="{{ route('activite.update') }}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="hidden" name="id" value="{{ $activite->id }}">
+                                                <label class="col-form-label">Libelle <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="libelle"
+                                                       value="{{ $activite->libelle }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Description <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="description"
+                                                       value="{{ $activite->description }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-focus select-focus">
+                                                <label class="col-form-label">Type <span
+                                                        class="text-danger">*</span></label>
+                                                <select class="form-control" name="type"
+                                                        value="{{ $activite->type }}">
+                                                    <option
+                                                        value="Individuelle" {{ $activite->type === 'Individuelle' ? 'selected' : '' }}>
+                                                        Individuelle
+                                                    </option>
+                                                    <option
+                                                        value="Collective" {{ $activite->type === 'Collective' ? 'selected' : '' }}>
+                                                        Collective
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-focus select-focus">
+                                                <label class="col-form-label">Statut <span
+                                                        class="text-danger">*</span></label>
+                                                <select class="form-control" name="statut"
+                                                        value="{{ $activite->statut }}">
+                                                    <option
+                                                        value="Actif" {{ $activite->statut === 'Actif' ? 'selected' : '' }}>
+                                                        Actif
+                                                    </option>
+                                                    <option
+                                                        value="Non-actif" {{ $activite->statut === 'Non-actif' ? 'selected' : '' }}>
+                                                        Non-actif
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="submit-section">
+                                        <button class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
         </div>
     </div>
 

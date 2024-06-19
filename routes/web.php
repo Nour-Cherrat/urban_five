@@ -88,3 +88,4 @@ Route::get('/contact/details', [ContactController::class, 'details'])->name('con
 /************************ Activite ************************/
 Route::get('/activite', [ActiviteController::class, 'index'])->name('activite.index')->middleware('auth');
 Route::post('/activite/create', [ActiviteController::class, 'create'])->name('activite.create')->middleware('auth');
+Route::post('/activite/update', [ActiviteController::class, 'update'])->name('activite.update')->middleware('auth');

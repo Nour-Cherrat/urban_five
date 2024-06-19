@@ -27,4 +27,18 @@ class ActiviteController extends Controller
 
         return redirect()->back();
     }
+
+    public function update(Request $request)
+    {
+        $activite = Activite::findOrFail($request->input('id'));
+
+        $activite->libelle = $request->input('libelle');
+        $activite->description = $request->input('description');
+        $activite->type = $request->input('type');
+        $activite->statut = $request->input('statut');
+
+        $activite->save();
+
+        return redirect()->route('activite.index');
+    }
 }
