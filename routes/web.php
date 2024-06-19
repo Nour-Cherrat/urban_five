@@ -9,6 +9,7 @@ use App\Http\Controllers\CoachController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\InviteController;
+use App\Http\Controllers\SalleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -90,3 +91,7 @@ Route::get('/activite', [ActiviteController::class, 'index'])->name('activite.in
 Route::post('/activite/create', [ActiviteController::class, 'create'])->name('activite.create')->middleware('auth');
 Route::post('/activite/update', [ActiviteController::class, 'update'])->name('activite.update')->middleware('auth');
 Route::delete('/activite/delete', [ActiviteController::class, 'delete'])->name('activite.delete')->middleware('auth');
+
+
+/************************ Salle ************************/
+Route::get('/salle', [SalleController::class, 'index'])->name('salle.index')->middleware('auth');
