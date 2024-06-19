@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('id_cours')->constrained('classes')->index('id_cours_coaches')->onDelete('cascade');
             $table->enum('duree', ['1 Mois', '3 Mois', '6 Mois', '1 An'])->default('1 Mois');
             $table->float('tarif');
+            $table->string('description');
             $table->timestamps();
         });
     }

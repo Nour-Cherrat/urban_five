@@ -32,6 +32,7 @@
                                     <tr>
                                         <th> #</th>
                                         <th> Cours</th>
+                                        <th> Description</th>
                                         <th> Duree</th>
                                         <th> Tarif</th>
                                         <th> Action</th>
@@ -42,6 +43,7 @@
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
                                             <td> {{ $abonnement->classe->libelle }} </td>
+                                            <td> {{ $abonnement->description }} </td>
                                             <td> {{ $abonnement->duree }} </td>
                                             <td> {{ $abonnement->tarif }} </td>
                                             <td class="text-right">
@@ -96,6 +98,13 @@
                                                         value="{{ $classe->id }}">{{ $classe->libelle }}</option>
                                                 @endforeach
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Description <span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" name="description">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -158,6 +167,14 @@
                                                             {{ $classe->libelle }}</option>
                                                     @endforeach
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Description <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="description"
+                                                       value="{{ $abonnement->description }}">
                                             </div>
                                         </div>
                                         <div class="col-md-12">

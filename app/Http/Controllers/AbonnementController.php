@@ -34,6 +34,7 @@ class AbonnementController extends Controller
         $abonnement->id_cours = $request->id_cours;
         $abonnement->duree = $request->duree;
         $abonnement->tarif = $request->tarif;
+        $abonnement->description = $request->description;
 
         $abonnement->save();
         return redirect()->back();
@@ -46,6 +47,7 @@ class AbonnementController extends Controller
         $abonnement->id_cours = $request->input('id_cours');
         $abonnement->duree = $request->input('duree');
         $abonnement->tarif = $request->input('tarif');
+        $abonnement->description = $request->input('description');
 
         $abonnement->save();
 

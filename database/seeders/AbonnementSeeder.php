@@ -17,36 +17,42 @@ class AbonnementSeeder extends Seeder
             'id_cours' => '1',
             'duree' => '1 Mois',
             'tarif' => '100',
+            'description' => 'test desc',
         ]);
 
         DB::table('abonnements')->insert([
             'id_cours' => '3',
             'duree' => '1 Mois',
             'tarif' => '300',
+            'description' => 'test desc',
         ]);
 
         DB::table('abonnements')->insert([
             'id_cours' => '1',
             'duree' => '1 An',
             'tarif' => '1000',
+            'description' => 'test desc',
         ]);
 
         DB::table('abonnements')->insert([
             'id_cours' => '2',
             'duree' => '1 Mois',
             'tarif' => '150',
+            'description' => 'test desc',
         ]);
 
         DB::table('abonnements')->insert([
             'id_cours' => '3',
             'duree' => '3 Mois',
             'tarif' => '500',
+            'description' => 'test desc',
         ]);
 
         DB::table('abonnements')->insert([
             'id_cours' => '1',
             'duree' => '3 Mois',
             'tarif' => '300',
+            'description' => 'test desc',
         ]);
     }
 }
