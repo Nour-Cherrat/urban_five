@@ -13908,7 +13908,7 @@ textarea.is-invalid.tt-hint, .select2-container--default .select2-selection--sin
 
 .modal {
   --bs-modal-zindex: 1055;
-  --bs-modal-width: 500px;
+  --bs-modal-width: 50%;
   --bs-modal-padding: 0.9375rem;
   --bs-modal-margin: 10px;
   --bs-modal-color: ;

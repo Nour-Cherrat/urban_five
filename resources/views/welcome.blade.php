@@ -1,7 +1,7 @@
 @extends('layoutsUser.app')
 
 @section('title')
-    <title>Urban 5</title>
+    <title>Urbain 5</title>
 @endsection
 
 @section('content')
@@ -9,13 +9,13 @@
     <!-- ***** Main Banner Area Start ***** -->
     <div class="main-banner" id="top">
         <video autoplay muted loop id="bg-video">
-            <source src="assets/images/gym-video.mp4" type="video/mp4"/>
+            <source src="https://urbainfive.com/img/videocomplexe.mp4" type="video/mp4"/>
         </video>
 
         <div class="video-overlay header-text">
             <div class="caption">
                 <h6>Travaillez plus dur, devenez plus fort</h6>
-                <h2>Facile avec notre <em>salle de sport</em></h2>
+                <h2>Urbain5 Marrakech <em>Marrakech</em></h2>
                 <div class="main-button scroll-to-section">
                     <a href="#features">Devenir membre</a>
                 </div>
@@ -32,47 +32,39 @@
                     <div class="section-heading">
                         <h2>Choisissez <em> Un Programme</em></h2>
                         <img src="assets/images/line-dec.png" alt="waves">
-                        <p>Le Studio de Formation est un modèle CSS gratuit pour les gymnases et les centres de fitness.
-                            Vous êtes
-                            autorisé à utiliser cette mise en page pour votre site Web d'entreprise.</p>
+                        <p>URBAIN FIVE est un COMPLEXE SPORTIF de 5000 M2 dédié au sport. URBAIN FIVE propose une impressionnante gamme d’activités pour toute la famille, une équipe dynamique et professionnelle répondant à toutes vos demandes. En choisissant URBAIN FIVE vous ne serez pas déçus car c’est : Le plus grand complexe sportif à Marrakech Des installations intérieure et extérieure haut de gamme Des équipements sportifs de dernière génération Des coaches diplômés et à votre écoute Du sport pour les grands et les petits : football, fitness, boxe, karaté, Jiujitsu… Une académie de football parmi les meilleurs de Marrakech Des terrains de football à la location avec des pelouses neuves et sous couches pour votre confort cértifiée par la FIFA</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <ul class="features-items">
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="assets/images/features-first-icon.png" alt="First One">
+                                <img src="https://cdn-icons-png.flaticon.com/128/3482/3482605.png " alt="First One">
                             </div>
                             <div class="right-content">
-                                <h4>Fitness de Base</h4>
-                                <p>Please do not re-distribute this template ZIP file on any template collection
-                                    website. This is not
-                                    allowed.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <h4>Fitness Mixte</h4>
+                                <p>Le Fitness Mixte mélange le fitness, le crossfit, le kick boxing ainsi que l’entraînement cardio. En plus, de brûler des calories et d’améliorer votre condition cardio vasculaire, vous travaillez la musculation. Cela permet d’affiner la silhouette et de renforcer vos muscles afin de réduire le risque de blessures lors de futures activités sportives.</p>
+                                <a href="#" class="text-button">Découvrir plus</a>
                             </div>
                         </li>
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="assets/images/features-first-icon.png" alt="second one">
+                                <img src="https://cdn-icons-png.flaticon.com/128/2964/2964546.png" alt="second one">
                             </div>
                             <div class="right-content">
-                                <h4>Nouvelle Formation en Salle de Sport</h4>
-                                <p>If you wish to support TemplateMo website via PayPal, please feel free to contact us.
-                                    We appreciate
-                                    it a lot.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <h4>Fitness 100% Femmes</h4>
+                                <p>Un environnement exclusivement féminin pour un confort optimal. Nos espaces dédiés offrent une atmosphère accueillante où chaque femme peut s’entraîner en toute confiance.</p>
+                                <a href="#" class="text-button">Découvrir plus</a>
                             </div>
                         </li>
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="assets/images/features-first-icon.png" alt="third gym training">
+                                <img src="https://cdn-icons-png.flaticon.com/128/2548/2548532.png" alt="third gym training">
                             </div>
                             <div class="right-content">
-                                <h4>Basic Muscle Course</h4>
-                                <p>Credit goes to <a rel="nofollow" href="https://www.pexels.com" target="_blank">Pexels
-                                        website</a> for
-                                    images and video background used in this HTML template.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <h4>Musculation</h4>
+                                <p>Tu débutes la musculation, le fitness et cherches le meilleur programme de musculation selon ton objectif ? Tu as déjà quelques années de pratique et tu as besoin de conseils pour progresser ? Urbain 5 partage avec toi son savoir-faire à travers des programmes musculation gratuits homme ou femme pour te permettre d’aller plus loin dans tes résultats : prise de masse, prise de muscle, sèche, fitness ou perte de poids.</p>
+                                <a href="#" class="text-button">Découvrir plus</a>
                             </div>
                         </li>
                     </ul>
@@ -81,41 +73,47 @@
                     <ul class="features-items">
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="assets/images/features-first-icon.png" alt="fourth muscle">
+                                <img src="https://cdn-icons-png.flaticon.com/128/4049/4049083.png" alt="fourth muscle">
                             </div>
                             <div class="right-content">
-                                <h4>Advanced Muscle Course</h4>
-                                <p>You may want to browse through <a rel="nofollow"
-                                                                     href="https://templatemo.com/tag/digital-marketing"
-                                                                     target="_parent">Digital Marketing</a> or <a
-                                        href="https://templatemo.com/tag/corporate">Corporate</a> HTML CSS templates on
-                                    our website.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <h4>Football</h4>
+                                <p>Au football, on peut différencier deux temps forts à savoir la pré-saison et la saison. Lors de la pré-saison, vous allez, certes vous octroyer quelques semaines de repos mais il est important de ne pas rester inactif durant 2 mois. Généralement, un programme inter-saison dure entre 4 et 6 semaines. C’est le moment idéal pour gagner de la masse musculaire, tout en améliorant sa condition physique générale.</p>
+                                <a href="#" class="text-button">Découvrir plus</a>
                             </div>
                         </li>
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="assets/images/features-first-icon.png" alt="training fifth">
+                                <img src="https://www.slotstemple.com/img/game_tiles/cage-fight.jpg" alt="training fifth">
                             </div>
                             <div class="right-content">
-                                <h4>Yoga Training</h4>
-                                <p>This template is built on Bootstrap v4.3.1 framework. It is easy to adapt the columns
-                                    and sections.
+                                <h4>Free Fight</h4>
+                                <p>Le Free Fight Club est géré par un coache diplomé d'état.
+                                Il entraîne une équipe de combattants professionnels mais s'adresse aussi aux pratiquants loisir, enfants et adultes recherchant une méthode d'entretien physique ou de self-défense.
                                 </p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <a href="#" class="text-button">Découvrir plus</a>
                             </div>
                         </li>
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="assets/images/features-first-icon.png" alt="gym training">
+                                <img src="https://t4.ftcdn.net/jpg/05/12/73/49/240_F_512734977_NvQ72scbjiNVlQyBNxW0aLhnlCJzdsEg.jpg" alt="gym training">
                             </div>
                             <div class="right-content">
-                                <h4>Body Building Course</h4>
-                                <p>Suspendisse fringilla et nisi et mattis. Curabitur sed finibus nisi. Integer nibh
-                                    sapien, vehicula et
-                                    auctor.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <h4>Jiu-Jitsu Brésilien</h4>
+                                <p> Jiu Jitsu Brésilien vous accueille et propose un ensemble de services et d'activités : Ju-Jitsu traditionnel, et autres.  Jiu Jitsu Brésilien est un club des arts martiaux pour enfants et adultes.</p>
+                                <a href="#" class="text-button">Découvrir plus</a>
+                            </div> 
+                            </li>
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="https://icon2.cleanpng.com/20180531/hyt/kisspng-nada-ku-kobe-sport-nishi-ku-kobe-hygo-ku-kobe-bubble-soccer-5b0fb3756c36e2.5496464115277556374433.jpg" alt="gym training">
                             </div>
+                            <div class="right-content">
+                                <h4>Bubble Football</h4>
+                                <p>Urbain 5 vous offre une nouvelle activité sportive « Le Bubble Football » qui associe le football traditionnel à un costume sous forme de bulle vous permettant de frapper dans un ballon tout en rebondissant, flottant, roulant et s’entrechoquant en toute sécurité.
+Les bulles entourent les joueurs de la mi-cuisse jusqu’à 15-20 cm au-dessus de la tête. Ils peuvent aisément courir, taper dans la balle, et éclater les autres joueurs en toute sécurité pour marquer.
+Venez donc nombreux fêter de manière originale votre anniversaire ou organiser votre team building ou simplement vous amuser.</p>
+                                <a href="#" class="text-button">Découvrir plus</a>
+                            </div> 
                         </li>
                     </ul>
                 </div>
@@ -131,9 +129,7 @@
                 <div class="col-lg-10 offset-lg-1">
                     <div class="cta-content">
                         <h2>Ne <em>pensez pas</em>, commencez <em>aujourd'hui</em>!</h2>
-                        <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula, sit amet dapibus
-                            odio augue
-                            eget libero. Morbi tempus mauris a nisi luctus imperdiet.</p>
+                        <p>Gagner, ce n’est pas finir en première position. Ce n’est pas battre les autres. Gagner c’est se vaincre soi-même. Vaincre notre corps, nos limites et nos peurs. Gagner, c’est se dépasser soi-même et transformer les rêves en réalité.</p>
                         <div class="main-button scroll-to-section">
                             <a href="#our-classes">Devenir membre</a>
                         </div>
@@ -152,78 +148,88 @@
                     <div class="section-heading">
                         <h2>Nos <em>Cours</em></h2>
                         <img src="assets/images/line-dec.png" alt="">
-                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor,
-                            ultricies fermentum
-                            massa consequat eu.</p>
+                        <p>Notre salle vous présente plusieurs cours comme on a différents activités que se soit individulles ou collectives.</p>
                     </div>
                 </div>
             </div>
             <div class="row" id="tabs">
                 <div class="col-lg-4">
                     <ul>
-                        <li><a href='#tabs-1'><img src="assets/images/tabs-first-icon.png" alt="">Premier Cours de
-                                Formation</a>
+                        <li><a href='#tabs-1'><img src="assets/images/tabs-first-icon.png" alt="">Premier Cours d'entrainement</a>
                         </li>
-                        <li><a href='#tabs-2'><img src="assets/images/tabs-first-icon.png" alt="">Deuxième Cours de
-                                Formation</a></a></li>
-                        <li><a href='#tabs-3'><img src="assets/images/tabs-first-icon.png" alt="">Troisième Cours de
-                                Formation</a></a></li>
-                        <li><a href='#tabs-4'><img src="assets/images/tabs-first-icon.png" alt="">Quatrième Cours de
-                                Formation</a></a></li>
-                        <div class="main-rounded-button"><a href="#">Voir Tous les Programmes</a></div>
+                        <li><a href='#tabs-2'><img src="assets/images/tabs-first-icon.png" alt="">Deuxième Cours d'entrainement</a></a></li>
+                        <li><a href='#tabs-3'><img src="assets/images/tabs-first-icon.png" alt="">Troisième Cours d'entrainement</a></a></li>
+                        <li><a href='#tabs-4'><img src="assets/images/tabs-first-icon.png" alt="">Quatrième Cours d'entrainement</a></a></li> 
+                        <li><a href='#tabs-5'><img src="assets/images/tabs-first-icon.png" alt="">Cinquième Cours d'entrainement</a></a></li> 
+                        <li><a href='#tabs-6'><img src="assets/images/tabs-first-icon.png" alt="">Sixième Cours d'entrainement</a></a></li> 
+                        <li><a href='#tabs-7'><img src="assets/images/tabs-first-icon.png" alt="">Septième Cours d'entrainement</a></a></li> 
+                        <div class="main-rounded-button"><a href="#">Voir Tous Les Emplois</a></div>
                     </ul>
                 </div>
                 <div class="col-lg-8">
                     <section class='tabs-content'>
                         <article id='tabs-1'>
-                            <img src="assets/images/training-image-01.jpg" alt="Premier Cours">
-                            <h4>Premier Cours de Formation</h4>
-                            <p>Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend
-                                hendrerit. Sed
-                                suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem tincidunt
-                                lacinia gravida
-                                aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut, accumsan diam.</p>
+                            <img src="https://previews.123rf.com/images/oneinchpunch/oneinchpunch1908/oneinchpunch190800075/128958084-mixed-race-group-of-athlete-at-the-gym.jpg" alt="Premier Cours">
+                            <h4>Premier Cours d'entrainement</h4>
+                            <p>Fitness Mixte vous apprend à effectuer des séries d’exercices de cardio, de gainage et de musculation.
+
+Cette classe est pratiquée en groupe avec un coach sportif, une dynamique s’installe on repousse ses limites physiques.</p>
                             <div class="main-button">
-                                <a href="#">Voir Programme</a>
+                                <a href="#">Voir Emploi</a>
                             </div>
                         </article>
                         <article id='tabs-2'>
-                            <img src="assets/images/training-image-02.jpg" alt="Deuxième Formation">
-                            <h4>Deuxième Cours de Formation</h4>
-                            <p>Integer dapibus, est vel dapibus mattis, sem mauris luctus leo, ac pulvinar quam tortor a
-                                velit.
-                                Praesent ultrices erat ante, in ultricies augue ultricies faucibus. Nam tellus nibh,
-                                ullamcorper at
-                                mattis non, rhoncus sed massa. Cras quis pulvinar eros. Orci varius natoque penatibus et
-                                magnis dis
-                                parturient montes, nascetur ridiculus mus.</p>
+                            <img src="https://centre-nobelium.fr/wp-content/uploads/2020/07/salle-de-sport-femme-lyon-1.jpg" alt="Deuxième Formation">
+                            <h4>Deuxième Cours d'entrainement</h4>
+                            <p>Fitness 100% Femmes propose des circuits fitness et minceur dédiés aux femmes. La spécificité de ces salles est qu’elles répondent à des besoins typiquement féminins. Elles permettent également de s’entrainer entre femmes et être encadrées par des femmes. Cela peut avoir pour avantage de se sentir avancer dans une atmosphère cocooning. Pour les plus pudiques c’est également une bonne alternative..</p>
                             <div class="main-button">
-                                <a href="#">Voir Programme</a>
+                                <a href="#">Voir Emploi</a>
                             </div>
                         </article>
                         <article id='tabs-3'>
-                            <img src="assets/images/training-image-03.jpg" alt="Troisième Cours">
-                            <h4>Troisième Cours de Formation</h4>
-                            <p>Fusce laoreet malesuada rhoncus. Donec ultricies diam tortor, id auctor neque posuere sit
-                                amet. Aliquam
-                                pharetra, augue vel cursus porta, nisi tortor vulputate sapien, id scelerisque felis
-                                magna id felis.
-                                Proin neque metus, pellentesque pharetra semper vel, accumsan a neque.</p>
+                            <img src="https://www.ericfavre.com/lifestyle/wp-content/uploads/2020/06/methode-de-muscu.jpg" alt="Troisième Cours">
+                            <h4>Troisième Cours d'entrainement</h4>
+                            <p>Musculation est un programme qui entrainera l’ensemble des muscles de votre corps dans une même séance. L’objectif est de vous faire répéter chaque geste, chaque mouvement plusieurs fois par semaine afin qu’il soit bien réalisé et en toute sécurit.</p>
                             <div class="main-button">
-                                <a href="#">Voir Programme</a>
+                                <a href="#">Voir Emploi</a>
                             </div>
                         </article>
                         <article id='tabs-4'>
-                            <img src="assets/images/training-image-04.jpg" alt="Quatrième Formation">
-                            <h4>Quatrième Cours de Formation</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                egestas. Aenean
-                                ultrices elementum odio ac tempus. Etiam eleifend orci lectus, eget venenatis ipsum
-                                commodo et.</p>
+                            <img src="https://www.truro-penwith.ac.uk/app/uploads/2023/01/Male-Football-Academy.jpg" alt="Quatrième Formation">
+                            <h4>Quatrième Cours d'entrainement</h4>
+                            <p>Le football est plus qu’un simple sport; c’est une passion, un mode de vie et, pour beaucoup, un chemin vers le succès personnel et professionnel. 
+
+Au cœur de cette quête de gloire se trouve le club de football, des institutions dédiées à la formation et au développement des talents de demain.</p>
                             <div class="main-button">
-                                <a href="#">Voir Programme</a>
+                                <a href="#">Voir Emploi</a>
                             </div>
-                        </article>
+                        </article> 
+                        <article id='tabs-5'>
+                            <img src="https://freemmatrainingworkouts.com/wp-content/uploads/2021/02/3-550x360.jpg" alt="Cinquième Formation">
+                            <h4>Cunquième Cours d'entrainement</h4>
+                            <p>Free Fight est plus qu’un simple sport; c’est une passion, un mode de vie et, pour beaucoup, un chemin vers le succès personnel et professionnel. 
+
+Au cœur de cette quête de gloire se trouve le club de football, des institutions dédiées à la formation et au développement des talents de demain.</p>
+                            <div class="main-button">
+                                <a href="#">Voir Emploi</a> 
+                                </div>  
+                                </article> 
+                        <article id='tabs-6'>
+                            <img src="https://www.jjblyon.com/uploads/3/7/8/9/37892651/751708.jpg?505" alt="Sixième Formation">
+                            <h4>Sixième Cours d'entrainement</h4>
+                            <p>Jiu-Jitsu Brésilien est  un art martial brésilien dérivé du jujitsu japonais traditionnel (et qu’on connaît aujourd’hui sous le nom de judo) qui se pratique principalement au sol et dont le but est de soumettre l’adversaire par étranglement ou clé d’articulation. Les frappes (coups de pied, poing, coude, tête et genou) volontaires sont interdites dans la pratique officielle.</p>
+                            <div class="main-button">
+                                <a href="#">Voir Emploi</a> 
+                                </div>  
+                                </article> 
+                                <article id='tabs-7'>
+                            <img src="https://assets.londonist.com/uploads/2014/07/i640/bubble-football.png" alt="Septième Formation">
+                            <h4>Septième Cours d'entrainement</h4>
+                            <p>Football et bulles gonflables n’avaient jamais fait si bon ménage. Si le beach soccer, le futsal ou encore le foot à 5 ne vous sont pas inconnus, le bubble foot est le tout nouveau venu au bataillon. La discipline consiste en fait à jouer au foot tout en étant cloisonné à l’intérieur d’une bulle gonflable. Ces deux composantes, a priori complètements opposées, peuvent pourtant donner un mélange des plus amusants et surtout des plus explosifs.</p>
+                            <div class="main-button">
+                                <a href="#">Voir Emploi</a> 
+                                </div>  
+                        </article> 
                     </section>
                 </div>
             </div>
@@ -236,11 +242,9 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading dark-bg">
-                        <h2>Programme des <em>Cours</em></h2>
+                        <h2>Horaires des <em>Cours</em></h2>
                         <img src="assets/images/line-dec.png" alt="">
-                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor,
-                            ultricies fermentum
-                            massa consequat eu.</p>
+                        <p>Notre Emploi présente les différents cours avec l'horaire et le coache associé.</p>
                     </div>
                 </div>
             </div>
@@ -323,9 +327,7 @@
                     <div class="section-heading">
                         <h2>Entraîneurs <em>Experts</em></h2>
                         <img src="assets/images/line-dec.png" alt="">
-                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor,
-                            ultricies fermentum
-                            massa consequat eu.</p>
+                        <p>Notre salle vous présentes des Entraîneurs Experts qui contribue significativement à l’obtention d’une performance athlétique supérieure à celle des concurrents (pour le sportif).</p>
                     </div>
                 </div>
             </div>
@@ -333,34 +335,12 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="assets/images/first-trainer.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <span>Entraîneur en Force</span>
-                            <h4>Bret D. Bowers</h4>
-                            <p>Distillerie tatouée de clichés amers 8-bit. Keytar succulentes église végétalienne sans
-                                gluten clé
-                                verser seitan flanelle.</p>
-                            <ul class="social-icons">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="trainer-item">
-                        <div class="image-thumb">
                             <img src="assets/images/second-trainer.jpg" alt="">
                         </div>
                         <div class="down-content">
-                            <span>Entraîneur Musculaire</span>
-                            <h4>Hector T. Daigl</h4>
-                            <p>Distillerie tatouée de clichés amers 8-bit. Keytar succulentes église végétalienne sans
-                                gluten clé
-                                verser seitan flanelle.</p>
+                            <span>Entraîneur Fitness Mixte</span>
+                            <h4>Nizar Dehbi</h4>
+                            <p></p>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -373,14 +353,12 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="assets/images/third-trainer.jpg" alt="">
+                            <img src="https://www.kinecalifornie.com/wp-content/uploads/2020/03/coaching-sportif-casablanca.jpg" alt="">
                         </div>
                         <div class="down-content">
-                            <span>Entraîneur en Yoga</span>
-                            <h4>Paul D. Newman</h4>
-                            <p>Distillerie tatouée de clichés amers 8-bit. Keytar succulentes église végétalienne sans
-                                gluten clé
-                                verser seitan flanelle.</p>
+                            <span>Entraîneur Fitness 100% femmes</span>
+                            <h4>Salma Motawakil</h4>
+                            <p></p>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -390,6 +368,96 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="https://thumbs.dreamstime.com/b/gym-trainer-welcome-customer-24614579.jpg" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>Entraîneur Musculation </span>
+                            <h4>Omar Benkirane</h4>
+                            <p></p>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div> 
+                <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="https://pdafootball.co.uk/wp-content/uploads/2022/08/IMG_1193-scaled.jpg" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>Entraîneur Football </span>
+                            <h4>Ayoub Lahlou</h4>
+                            <p></p>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div>  
+                <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="https://images.squarespace-cdn.com/content/v1/592b427c03596ef189778bef/1543505483677-9O6DSDI1DVR4PVYZVVQE/Coaching+Sportif+Franck+Grandsart+I" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>Entraîneur Free Fight </span>
+                            <h4>Mohamed Chraibi</h4>
+                            <p></p>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div> 
+                <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="https://contents.mediadecathlon.com/b72240/k$61be2794bb049f6e4520fa09d71738f2/1920x0/625pt625/1250xcr1250/PHOTO_INT_ARTS_MARTIAUX_Thibaut_" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>Entraîneur Jiu-Jitsu Brésilien</span>
+                            <h4>Ali Bennani</h4>
+                            <p></p>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div>  
+                <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="https://media.sudouest.fr/3213170/1000x500/larochelle-aunis-re-9b0d851754f2435ca97cc2fdfdbb8fce-092231-ph0.jpg?v=1626200979" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>Entraîneur Bubble Football </span>
+                            <h4>Anas Bennis</h4>
+                            <p></p>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div> 
             </div>
         </div>
     </section>
