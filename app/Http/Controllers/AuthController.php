@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -47,6 +48,14 @@ class AuthController extends Controller
 
     public function doRegister(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users,email',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Un compte avec cette adresse e-mail existe déjà.');
+        }
+
         $adherent = new Adherent();
 
         $adherent->nom = $request->nom;
@@ -54,10 +63,11 @@ class AuthController extends Controller
         $adherent->email = $request->email;
         $adherent->password = Hash::make($request->password);
         $adherent->tel = $request->tel;
+        $adherent->adresse = $request->adresse;
         $adherent->date_inscription = Carbon::now();
         $adherent->gender = $request->gender;
         $adherent->id_classe = $request->id_classe;
-        $adherent->statut = 'Actif';
+        $adherent->statut = 'Non-actif';
 
         $adherent->save();
 
