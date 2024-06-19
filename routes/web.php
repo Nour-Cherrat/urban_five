@@ -78,6 +78,6 @@ Route::get('/invite/profile', [InviteController::class, 'profile'])->name('invit
 /************************ Contact ************************/
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index')->middleware('auth');
 Route::post('/contact/create', [ContactController::class, 'create'])->name('contact.create')->middleware('auth');
-Route::delete('/invite/delete', [ContactController::class, 'delete'])->name('contact.delete')->middleware('auth');
+Route::delete('/contact/delete', [ContactController::class, 'delete'])->name('contact.delete')->middleware('auth');
 Route::get('/contact/details', [ContactController::class, 'details'])->name('contact.details')->middleware('auth');
 
